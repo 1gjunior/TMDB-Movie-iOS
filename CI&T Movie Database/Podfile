@@ -1,0 +1,5 @@
+platform :ios, '9.0'
+
+target 'CI&T Movie Database' do
+    use_frameworks!
+end

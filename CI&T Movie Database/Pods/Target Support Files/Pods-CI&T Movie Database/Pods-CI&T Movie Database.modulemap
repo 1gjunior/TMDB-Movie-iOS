@@ -1,0 +1,6 @@
+framework module Pods_CI_T_Movie_Database {
+  umbrella header "Pods-CI&T Movie Database-umbrella.h"
+
+  export *
+  module * { export * }
+}
