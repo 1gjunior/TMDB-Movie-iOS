@@ -13,6 +13,8 @@
 		299BBA32287DCFDF00ADE88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299BBA30287DCFDF00ADE88D /* Main.storyboard */; };
 		299BBA34287DCFE100ADE88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299BBA33287DCFE100ADE88D /* Assets.xcassets */; };
 		299BBA37287DCFE100ADE88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */; };
+		299BBA40287DD16500ADE88D /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA3F287DD16500ADE88D /* Genre.swift */; };
+		299BBA42287DD18B00ADE88D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA41287DD18B00ADE88D /* Movie.swift */; };
 		2FCD81763BAF519AEA34FB74 /* Pods_CI_T_Movie_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A61851E1101F994A0945CE /* Pods_CI_T_Movie_Database.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		299BBA33287DCFE100ADE88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		299BBA36287DCFE100ADE88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		299BBA38287DCFE100ADE88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299BBA3F287DD16500ADE88D /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		299BBA41287DD18B00ADE88D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7FB11A056EAB5BEA2B217FCC /* Pods-CI&T Movie Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CI&T Movie Database.release.xcconfig"; path = "Target Support Files/Pods-CI&T Movie Database/Pods-CI&T Movie Database.release.xcconfig"; sourceTree = "<group>"; };
 		B4E3C60AC5108552F3E106EC /* Pods-CI&T Movie Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CI&T Movie Database.debug.xcconfig"; path = "Target Support Files/Pods-CI&T Movie Database/Pods-CI&T Movie Database.debug.xcconfig"; sourceTree = "<group>"; };
 		D5A61851E1101F994A0945CE /* Pods_CI_T_Movie_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CI_T_Movie_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +52,6 @@
 				B4E3C60AC5108552F3E106EC /* Pods-CI&T Movie Database.debug.xcconfig */,
 				7FB11A056EAB5BEA2B217FCC /* Pods-CI&T Movie Database.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -76,12 +79,22 @@
 				299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
 				299BBA2E287DCFDF00ADE88D /* ViewController.swift */,
+				299BBA3E287DD14D00ADE88D /* Model */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
 				299BBA33287DCFE100ADE88D /* Assets.xcassets */,
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
 				299BBA38287DCFE100ADE88D /* Info.plist */,
 			);
 			path = "CI&T Movie Database";
+			sourceTree = "<group>";
+		};
+		299BBA3E287DD14D00ADE88D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				299BBA3F287DD16500ADE88D /* Genre.swift */,
+				299BBA41287DD18B00ADE88D /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6C9DC7EA590D849BE1BA178F /* Frameworks */ = {
@@ -192,6 +205,8 @@
 				299BBA2F287DCFDF00ADE88D /* ViewController.swift in Sources */,
 				299BBA2B287DCFDF00ADE88D /* AppDelegate.swift in Sources */,
 				299BBA2D287DCFDF00ADE88D /* SceneDelegate.swift in Sources */,
+				299BBA40287DD16500ADE88D /* Genre.swift in Sources */,
+				299BBA42287DD18B00ADE88D /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
