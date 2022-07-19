@@ -34,12 +34,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xpo-3f-E1b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="18j-AI-XrJ"/>
                             <constraint firstAttribute="bottom" secondItem="Xpo-3f-E1b" secondAttribute="bottom" id="G04-so-oar"/>
                             <constraint firstItem="C8q-vK-ntk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PEw-ru-XbT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xpo-3f-E1b" secondAttribute="trailing" id="Xwy-kG-OTQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Xpo-3f-E1b" secondAttribute="trailing" id="SiT-8g-6Zq"/>
                             <constraint firstItem="C8q-vK-ntk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="l01-K4-gpM"/>
                             <constraint firstItem="Xpo-3f-E1b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="tmN-iC-O3B"/>
+                            <constraint firstItem="Xpo-3f-E1b" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xAN-7x-7c5"/>
                         </constraints>
                     </view>
                 </viewController>
