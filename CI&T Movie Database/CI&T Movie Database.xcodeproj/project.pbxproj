@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3A2888D36E00E351F4 /* PhotoViewController.swift */; };
+		29590D3D2888D5EE00E351F4 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */; };
 		299BBA2B287DCFDF00ADE88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */; };
 		299BBA2D287DCFDF00ADE88D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */; };
 		299BBA2F287DCFDF00ADE88D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2E287DCFDF00ADE88D /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29590D3A2888D36E00E351F4 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		299BBA27287DCFDF00ADE88D /* CI&T Movie Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CI&T Movie Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,8 +86,10 @@
 				299BBA43287DD7CD00ADE88D /* Database */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
 				299BBA2E287DCFDF00ADE88D /* ViewController.swift */,
+				29590D3A2888D36E00E351F4 /* PhotoViewController.swift */,
 				299BBA3E287DD14D00ADE88D /* Model */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
+				29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */,
 				299BBA33287DCFE100ADE88D /* Assets.xcassets */,
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
 				299BBA38287DCFE100ADE88D /* Info.plist */,
@@ -213,10 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29590D3D2888D5EE00E351F4 /* PhotoTableViewCell.swift in Sources */,
 				299BBA2F287DCFDF00ADE88D /* ViewController.swift in Sources */,
 				299BBA2B287DCFDF00ADE88D /* AppDelegate.swift in Sources */,
 				299BBA2D287DCFDF00ADE88D /* SceneDelegate.swift in Sources */,
 				299BBA45287DD82500ADE88D /* MovieDatabase.swift in Sources */,
+				29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */,
 				299BBA40287DD16500ADE88D /* Genre.swift in Sources */,
 				299BBA42287DD18B00ADE88D /* Movie.swift in Sources */,
 			);
