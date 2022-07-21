@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3A2888D36E00E351F4 /* PhotoViewController.swift */; };
 		29590D3D2888D5EE00E351F4 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */; };
+		29590D662888E89200E351F4 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = 29590D652888E89200E351F4 /* Poppins */; };
 		299BBA2B287DCFDF00ADE88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */; };
 		299BBA2D287DCFDF00ADE88D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */; };
 		299BBA2F287DCFDF00ADE88D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA2E287DCFDF00ADE88D /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		29590D3A2888D36E00E351F4 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		29590D652888E89200E351F4 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Poppins; path = ../../../../../../Downloads/Poppins; sourceTree = "<group>"; };
 		299BBA27287DCFDF00ADE88D /* CI&T Movie Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CI&T Movie Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		29590D642888E87600E351F4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				29590D652888E89200E351F4 /* Poppins */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		299BBA1E287DCFDF00ADE88D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 				299BBA43287DD7CD00ADE88D /* Database */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
 				299BBA2E287DCFDF00ADE88D /* ViewController.swift */,
+				29590D642888E87600E351F4 /* Fonts */,
 				29590D3A2888D36E00E351F4 /* PhotoViewController.swift */,
 				299BBA3E287DD14D00ADE88D /* Model */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
@@ -181,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29590D662888E89200E351F4 /* Poppins in Resources */,
 				299BBA37287DCFE100ADE88D /* LaunchScreen.storyboard in Resources */,
 				299BBA34287DCFE100ADE88D /* Assets.xcassets in Resources */,
 				299BBA32287DCFDF00ADE88D /* Main.storyboard in Resources */,
