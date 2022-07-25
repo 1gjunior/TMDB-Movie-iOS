@@ -40,7 +40,7 @@ class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewD
         return photoCell
     }
 
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 224
-    }
+//    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+//        return 224
+//    }
 }
