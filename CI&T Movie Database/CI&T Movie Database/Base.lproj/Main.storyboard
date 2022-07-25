@@ -119,61 +119,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="castCell" rowHeight="117" id="DjK-XR-Afa" customClass="CastCrewTableViewCell" customModule="CI_T_Movie_Database" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="castCell" rowHeight="117" id="DjK-XR-Afa" customClass="CastCrewTableViewCell" customModule="CI_T_Movie_Database" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DjK-XR-Afa" id="lQx-Ih-OJj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ztf-l1-iUC">
-                                            <rect key="frame" x="20" y="6" width="374" height="105"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-LK-3Aw">
+                                            <rect key="frame" x="16" y="0.0" width="382" height="117"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7z7-cj-w8n">
-                                                    <rect key="frame" x="0.0" y="23.5" width="236" height="58"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dLT-ik-whk">
+                                                    <rect key="frame" x="0.0" y="34.5" width="270" height="48"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ovx-LT-V8q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="58"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovx-LT-V8q">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="EyL-U7-Bor"/>
+                                                                <constraint firstAttribute="width" secondItem="ovx-LT-V8q" secondAttribute="height" multiplier="1:1" id="Nz2-yi-LXO"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keanu Reeves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9f5-j6-BQn">
-                                                            <rect key="frame" x="58" y="19" width="178" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Keanu Reeves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f5-j6-BQn">
+                                                            <rect key="frame" x="56" y="0.0" width="214" height="48"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zQP-hj-C3e">
-                                                    <rect key="frame" x="244" y="21.5" width="130" height="62"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E8g-pi-sHz">
+                                                    <rect key="frame" x="278" y="50.5" width="104" height="16"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-L3-sXg">
-                                                            <rect key="frame" x="0.0" y="6" width="50" height="50"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-L3-sXg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="28u-MF-wge"/>
+                                                                <constraint firstAttribute="width" secondItem="ExF-L3-sXg" secondAttribute="height" multiplier="1:1" id="YeC-c1-T7F"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMM-Z5-iah">
-                                                            <rect key="frame" x="58" y="22.5" width="72" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="John Wick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMM-Z5-iah">
+                                                            <rect key="frame" x="24" y="0.0" width="80" height="16"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="ExF-L3-sXg" secondAttribute="trailing" constant="80" id="0Fw-ik-Fio"/>
-                                                        <constraint firstAttribute="height" constant="62" id="Fd2-bK-mg6"/>
-                                                        <constraint firstItem="VMM-Z5-iah" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ExF-L3-sXg" secondAttribute="trailing" constant="8" symbolic="YES" id="clD-ra-OkS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ExF-L3-sXg" secondAttribute="trailing" constant="88" id="abx-t6-PIo"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="zQP-hj-C3e" firstAttribute="leading" secondItem="Ztf-l1-iUC" secondAttribute="leading" constant="244" id="qMH-A0-092"/>
-                                                <constraint firstAttribute="trailing" secondItem="7z7-cj-w8n" secondAttribute="trailing" constant="138" id="qvL-KJ-A3b"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ztf-l1-iUC" firstAttribute="height" secondItem="lQx-Ih-OJj" secondAttribute="height" multiplier="0.9" id="BHd-GE-CTT"/>
-                                        <constraint firstItem="Ztf-l1-iUC" firstAttribute="leading" secondItem="lQx-Ih-OJj" secondAttribute="leading" constant="20" symbolic="YES" id="QHj-8m-oTL"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ztf-l1-iUC" secondAttribute="trailing" constant="20" symbolic="YES" id="frr-SV-7CQ"/>
-                                        <constraint firstItem="Ztf-l1-iUC" firstAttribute="centerY" secondItem="lQx-Ih-OJj" secondAttribute="centerY" id="xZA-gA-rye"/>
+                                        <constraint firstItem="eiM-LK-3Aw" firstAttribute="height" secondItem="lQx-Ih-OJj" secondAttribute="height" id="8Lv-Sq-AzN"/>
+                                        <constraint firstAttribute="trailing" secondItem="eiM-LK-3Aw" secondAttribute="trailing" constant="16" id="9vp-0f-nuI"/>
+                                        <constraint firstItem="eiM-LK-3Aw" firstAttribute="leading" secondItem="lQx-Ih-OJj" secondAttribute="leading" constant="16" id="CUS-on-Ero"/>
+                                        <constraint firstItem="eiM-LK-3Aw" firstAttribute="centerY" secondItem="lQx-Ih-OJj" secondAttribute="centerY" id="EHq-XZ-Vnu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
