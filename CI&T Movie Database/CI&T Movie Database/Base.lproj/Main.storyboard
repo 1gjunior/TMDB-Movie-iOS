@@ -1,63 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9UT-HZ-kVa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7t-8Y-YQQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Medium.ttf">
-            <string>Poppins-Medium</string>
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
         </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="dGg-Br-jkm">
-                                <rect key="frame" x="16" y="44" width="382" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CI&amp;T Movie DB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwx-KA-WzR">
-                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="31"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrM-gP-4Dr">
-                                        <rect key="frame" x="361.5" y="4.5" width="20.5" height="22"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="dGg-Br-jkm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X41-Qd-6cY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGg-Br-jkm" secondAttribute="trailing" constant="16" id="Xyc-qX-a0c"/>
-                            <constraint firstItem="dGg-Br-jkm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g2s-4S-Ohr"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-887" y="-556"/>
-        </scene>
         <!--Photo View Controller-->
         <scene sceneID="Ax6-ea-QW4">
             <objects>
@@ -199,12 +159,121 @@
             </objects>
             <point key="canvasLocation" x="714.49275362318849" y="-556.47321428571422"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Xyi-sk-f15">
+            <objects>
+                <viewController id="d7t-8Y-YQQ" customClass="HomeViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wb-MR-jxp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-GP-IeL">
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jZI-bz-KHT">
+                                    <size key="itemSize" width="400" height="800"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="UDU-7K-62G" customClass="HomeCollectionViewCell" customModule="CI_T_Movie_Database" customModuleProvider="target">
+                                        <rect key="frame" x="102" y="0.0" width="210" height="294"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ko9-J2-xUh">
+                                            <rect key="frame" x="0.0" y="0.0" width="210" height="294"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vaD-2g-KQA">
+                                                    <rect key="frame" x="8" y="0.0" width="194" height="246.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-rD-O6M">
+                                                    <rect key="frame" x="14" y="250.5" width="196" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hIX-Nb-agQ">
+                                                    <rect key="frame" x="14" y="277" width="173" height="17"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89G-wZ-9ub">
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L57-BR-EZb">
+                                                            <rect key="frame" x="35" y="0.0" width="32" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gth-5t-8K4">
+                                                            <rect key="frame" x="70" y="0.0" width="32" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1k-iJ-jX0">
+                                                            <rect key="frame" x="105" y="0.0" width="32" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpt-GU-jzr">
+                                                            <rect key="frame" x="140" y="0.0" width="33" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BWw-rD-O6M" firstAttribute="top" secondItem="vaD-2g-KQA" secondAttribute="bottom" constant="4" id="2Yg-QW-GXD"/>
+                                                <constraint firstAttribute="trailing" secondItem="BWw-rD-O6M" secondAttribute="trailing" id="7Hb-LF-J8g"/>
+                                                <constraint firstItem="hIX-Nb-agQ" firstAttribute="leading" secondItem="BWw-rD-O6M" secondAttribute="leading" id="ECQ-zv-Rry"/>
+                                                <constraint firstAttribute="bottom" secondItem="hIX-Nb-agQ" secondAttribute="bottom" id="KAB-Nn-n4i"/>
+                                                <constraint firstItem="vaD-2g-KQA" firstAttribute="leading" secondItem="ko9-J2-xUh" secondAttribute="leading" constant="8" id="Lh0-ma-TYz"/>
+                                                <constraint firstItem="vaD-2g-KQA" firstAttribute="top" secondItem="ko9-J2-xUh" secondAttribute="top" id="P1y-TV-vcg"/>
+                                                <constraint firstItem="hIX-Nb-agQ" firstAttribute="top" secondItem="BWw-rD-O6M" secondAttribute="bottom" constant="4" id="b0S-yg-OKl"/>
+                                                <constraint firstAttribute="trailing" secondItem="vaD-2g-KQA" secondAttribute="trailing" constant="8" id="jKR-BD-dUI"/>
+                                                <constraint firstItem="BWw-rD-O6M" firstAttribute="leading" secondItem="ko9-J2-xUh" secondAttribute="leading" constant="14" id="jvy-u5-1vp"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="210" height="294"/>
+                                        <connections>
+                                            <outlet property="genreLabel" destination="89G-wZ-9ub" id="jo4-Ed-Jbf"/>
+                                            <outlet property="middleDotLabel" destination="L57-BR-EZb" id="60B-sN-8u1"/>
+                                            <outlet property="movieImageView" destination="vaD-2g-KQA" id="nzU-r7-lnr"/>
+                                            <outlet property="pipeLabel" destination="a1k-iJ-jX0" id="mV9-aX-6dB"/>
+                                            <outlet property="releaseDateLabel" destination="gth-5t-8K4" id="OYa-lc-Gg9"/>
+                                            <outlet property="titleLabel" destination="BWw-rD-O6M" id="OfO-0s-cU2"/>
+                                            <outlet property="voteAverageLabel" destination="tpt-GU-jzr" id="Qoh-s7-Xqm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qbl-me-MxW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wNY-GP-IeL" firstAttribute="leading" secondItem="qbl-me-MxW" secondAttribute="leading" id="Tm8-5B-vYk"/>
+                            <constraint firstItem="wNY-GP-IeL" firstAttribute="top" secondItem="qbl-me-MxW" secondAttribute="top" constant="30" id="gKo-Vl-Oxt"/>
+                            <constraint firstItem="qbl-me-MxW" firstAttribute="trailing" secondItem="wNY-GP-IeL" secondAttribute="trailing" id="k0l-Rx-ADS"/>
+                            <constraint firstItem="qbl-me-MxW" firstAttribute="bottom" secondItem="wNY-GP-IeL" secondAttribute="bottom" id="pRB-HE-1Zk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="wNY-GP-IeL" id="jAi-rd-11O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HdQ-xK-B8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823.1884057971015" y="-556.47321428571422"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

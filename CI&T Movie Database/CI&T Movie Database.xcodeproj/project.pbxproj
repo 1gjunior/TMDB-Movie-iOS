@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		294CB197288ED4BD008DD76B /* CastCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */; };
 		294CB199288EDF0E008DD76B /* CastCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */; };
+		294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19A288F1FA2008DD76B /* HomeViewController.swift */; };
+		294CB19D288F383A008DD76B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */; };
 		29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3A2888D36E00E351F4 /* PhotoViewController.swift */; };
 		29590D3D2888D5EE00E351F4 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */; };
 		29590DE92888FFAC00E351F4 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29590DD72888FFAC00E351F4 /* Poppins-ExtraLight.ttf */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewTableViewController.swift; sourceTree = "<group>"; };
 		294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewTableViewCell.swift; sourceTree = "<group>"; };
+		294CB19A288F1FA2008DD76B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		29590D3A2888D36E00E351F4 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		29590DD72888FFAC00E351F4 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -159,12 +163,14 @@
 				299BBA43287DD7CD00ADE88D /* Database */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
 				299BBA2E287DCFDF00ADE88D /* ViewController.swift */,
+				294CB19A288F1FA2008DD76B /* HomeViewController.swift */,
 				29590D642888E87600E351F4 /* Fonts */,
 				29590D3A2888D36E00E351F4 /* PhotoViewController.swift */,
 				294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */,
 				299BBA3E287DD14D00ADE88D /* Model */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
 				29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */,
+				294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */,
 				294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */,
 				299BBA33287DCFE100ADE88D /* Assets.xcassets */,
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
@@ -320,9 +326,11 @@
 				299BBA45287DD82500ADE88D /* MovieDatabase.swift in Sources */,
 				294CB199288EDF0E008DD76B /* CastCrewTableViewCell.swift in Sources */,
 				29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */,
+				294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */,
 				299BBA40287DD16500ADE88D /* Genre.swift in Sources */,
 				294CB197288ED4BD008DD76B /* CastCrewTableViewController.swift in Sources */,
 				299BBA42287DD18B00ADE88D /* Movie.swift in Sources */,
+				294CB19D288F383A008DD76B /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
