@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7t-8Y-YQQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="duu-ps-We5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -160,6 +160,158 @@
             </objects>
             <point key="canvasLocation" x="714.49275362318849" y="-556.47321428571422"/>
         </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="uaC-M8-aCA">
+            <objects>
+                <viewController id="duu-ps-We5" customClass="MovieDetailViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TQv-NK-l3d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJ8-KT-6qU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW7-rM-s8k">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="john-wick-detail" translatesAutoresizingMaskIntoConstraints="NO" id="zLW-bH-8gu">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick 3: Parabellum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NKg-6w-phR">
+                                                <rect key="frame" x="20" y="270" width="338" height="34"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyl-Cg-e4m">
+                                                <rect key="frame" x="20" y="312" width="52" height="45"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="32"/>
+                                                <color key="textColor" name="RedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2hr 10m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y40-MN-JCv">
+                                                <rect key="frame" x="80" y="312" width="62" height="23"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAC-33-vf5">
+                                                <rect key="frame" x="150" y="311" width="5" height="23"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8V-qc-OOT">
+                                                <rect key="frame" x="163" y="312" width="10" height="23"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Crime, Thriller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2x-9z-SL2">
+                                                <rect key="frame" x="80" y="336" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-62-hyB">
+                                                <rect key="frame" x="20" y="389" width="79.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lxx-KI-qve">
+                                                <rect key="frame" x="0.0" y="373" width="414" height="1"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qzG-Ez-7vh">
+                                                <rect key="frame" x="17" y="422.5" width="377" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="RdD-UX-XXR"/>
+                                                </constraints>
+                                                <string key="text">With the untimely death of his beloved wife still bitter in his mouth, John Wick, the expert former assassin, receives one final gift from her--a precious keepsake to help John find a new meaning in life now that she is gone. But when the arrogant Russian mob prince, Iosef Tarasov, and his men pay Wick a rather unwelcome visit to rob him of his prized 1969 Mustang and his wife's present, the legendary hitman will be forced to unearth his meticulously concealed identity. Blind with revenge, John will immediately unleash a carefully orchestrated maelstrom of destruction against the sophisticated kingpin, Viggo Tarasov, and his family, who are fully aware of his lethal capacity. Now, only blood can quench the boogeyman's thirst for retribution.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YH-P2-Fkr">
+                                                <rect key="frame" x="297" y="558" width="97" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Show More"/>
+                                                <connections>
+                                                    <action selector="showButtonClick:" destination="duu-ps-We5" eventType="touchUpInside" id="4M7-ln-h5g"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y2x-9z-SL2" secondAttribute="trailing" constant="20" symbolic="YES" id="1gL-3N-Xsh"/>
+                                            <constraint firstItem="Lxx-KI-qve" firstAttribute="top" secondItem="uyl-Cg-e4m" secondAttribute="bottom" constant="16" id="1yE-cS-r3J"/>
+                                            <constraint firstItem="zLW-bH-8gu" firstAttribute="top" secondItem="XW7-rM-s8k" secondAttribute="top" id="2x2-Of-gTN"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uyl-Cg-e4m" secondAttribute="trailing" constant="8" symbolic="YES" id="3zk-Ai-yhO"/>
+                                            <constraint firstItem="H8V-qc-OOT" firstAttribute="leading" secondItem="uAC-33-vf5" secondAttribute="trailing" constant="8" symbolic="YES" id="63P-HH-3wc"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="top" secondItem="Y40-MN-JCv" secondAttribute="bottom" constant="1" id="6A8-r4-aLt"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="top" secondItem="uAC-33-vf5" secondAttribute="bottom" constant="2" id="8tO-Fm-Dpx"/>
+                                            <constraint firstItem="qzG-Ez-7vh" firstAttribute="top" secondItem="dxI-62-hyB" secondAttribute="bottom" constant="8" id="AVS-2v-DNI"/>
+                                            <constraint firstAttribute="trailing" secondItem="NKg-6w-phR" secondAttribute="trailing" multiplier="1.1" constant="20" symbolic="YES" id="CAE-D9-MYq"/>
+                                            <constraint firstItem="9YH-P2-Fkr" firstAttribute="top" secondItem="qzG-Ez-7vh" secondAttribute="bottom" constant="7.5" id="Dvv-Oz-tYF"/>
+                                            <constraint firstItem="NKg-6w-phR" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="20" symbolic="YES" id="GOF-nf-Fkt"/>
+                                            <constraint firstItem="uAC-33-vf5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Y40-MN-JCv" secondAttribute="trailing" constant="8" symbolic="YES" id="JUj-Fg-kC3"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="80" id="MQD-rP-JUx"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="leading" secondItem="Y40-MN-JCv" secondAttribute="leading" id="NAX-jd-ocp"/>
+                                            <constraint firstItem="Lxx-KI-qve" firstAttribute="trailing" secondItem="zLW-bH-8gu" secondAttribute="trailing" id="P19-zx-top"/>
+                                            <constraint firstItem="qzG-Ez-7vh" firstAttribute="leading" secondItem="dxI-62-hyB" secondAttribute="leading" multiplier="0.85" id="PVn-0B-Two"/>
+                                            <constraint firstItem="dxI-62-hyB" firstAttribute="top" secondItem="uyl-Cg-e4m" secondAttribute="bottom" constant="32" id="QnO-PB-bxm"/>
+                                            <constraint firstAttribute="height" constant="1000" id="R6n-P9-UAs"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dxI-62-hyB" secondAttribute="trailing" constant="20" symbolic="YES" id="X4D-Dy-KY0"/>
+                                            <constraint firstItem="dxI-62-hyB" firstAttribute="top" secondItem="Lxx-KI-qve" secondAttribute="bottom" constant="15" id="a26-4M-NZC"/>
+                                            <constraint firstItem="9YH-P2-Fkr" firstAttribute="trailing" secondItem="qzG-Ez-7vh" secondAttribute="trailing" id="ab6-Ag-sQd"/>
+                                            <constraint firstItem="NKg-6w-phR" firstAttribute="top" secondItem="zLW-bH-8gu" secondAttribute="bottom" constant="8" id="cot-M0-NNT"/>
+                                            <constraint firstItem="9YH-P2-Fkr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="20" symbolic="YES" id="dMd-Yb-1Mq"/>
+                                            <constraint firstItem="Lxx-KI-qve" firstAttribute="leading" secondItem="zLW-bH-8gu" secondAttribute="leading" id="eBJ-hh-Jhf"/>
+                                            <constraint firstItem="H8V-qc-OOT" firstAttribute="baseline" secondItem="Y40-MN-JCv" secondAttribute="baseline" id="g7B-Wj-Fb1"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H8V-qc-OOT" secondAttribute="trailing" constant="20" symbolic="YES" id="hMW-Ss-w85"/>
+                                            <constraint firstAttribute="trailing" secondItem="qzG-Ez-7vh" secondAttribute="trailing" constant="20" symbolic="YES" id="hlQ-Ie-yTL"/>
+                                            <constraint firstItem="zLW-bH-8gu" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" id="is3-g9-ybx"/>
+                                            <constraint firstItem="dxI-62-hyB" firstAttribute="leading" secondItem="uyl-Cg-e4m" secondAttribute="leading" id="lnL-y3-U0m"/>
+                                            <constraint firstItem="uyl-Cg-e4m" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="20" id="m1e-A9-Cav"/>
+                                            <constraint firstItem="H8V-qc-OOT" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="163" id="m2X-Wb-8Ag"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="top" secondItem="XW7-rM-s8k" secondAttribute="top" constant="336" id="m4p-Gn-bTZ"/>
+                                            <constraint firstItem="y2x-9z-SL2" firstAttribute="bottom" secondItem="uyl-Cg-e4m" secondAttribute="bottom" id="v3M-iN-CQY"/>
+                                            <constraint firstAttribute="trailing" secondItem="zLW-bH-8gu" secondAttribute="trailing" id="y8M-5Z-MBW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XW7-rM-s8k" firstAttribute="bottom" secondItem="7Ra-tg-oXO" secondAttribute="bottom" id="F6j-BR-g6L"/>
+                                    <constraint firstItem="XW7-rM-s8k" firstAttribute="top" secondItem="7Ra-tg-oXO" secondAttribute="top" id="JXc-Ze-Bbd"/>
+                                    <constraint firstItem="XW7-rM-s8k" firstAttribute="leading" secondItem="7Ra-tg-oXO" secondAttribute="leading" id="OqR-WM-gpV"/>
+                                    <constraint firstItem="XW7-rM-s8k" firstAttribute="trailing" secondItem="7Ra-tg-oXO" secondAttribute="trailing" id="YmS-Cc-POA"/>
+                                    <constraint firstItem="XW7-rM-s8k" firstAttribute="width" secondItem="5rs-eZ-m1L" secondAttribute="width" id="iiX-TL-32W"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7Ra-tg-oXO"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="5rs-eZ-m1L"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="erc-c3-J3M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="erc-c3-J3M" firstAttribute="trailing" secondItem="eJ8-KT-6qU" secondAttribute="trailing" id="2ng-BG-41G"/>
+                            <constraint firstItem="eJ8-KT-6qU" firstAttribute="top" secondItem="erc-c3-J3M" secondAttribute="top" id="CaM-O0-ffk"/>
+                            <constraint firstItem="eJ8-KT-6qU" firstAttribute="leading" secondItem="erc-c3-J3M" secondAttribute="leading" id="Vnc-r4-D57"/>
+                            <constraint firstItem="erc-c3-J3M" firstAttribute="bottom" secondItem="eJ8-KT-6qU" secondAttribute="bottom" id="cCD-yd-TlO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showButton" destination="9YH-P2-Fkr" id="fC4-X9-ZZx"/>
+                        <outlet property="textView" destination="qzG-Ez-7vh" id="d6C-3L-8yQ"/>
+                        <outlet property="textViewHeight" destination="RdD-UX-XXR" id="GUD-2Q-WGa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6Q-Ad-e3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1577" y="-556"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="Xyi-sk-f15">
             <objects>
@@ -290,9 +442,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="john-wick-detail" width="375" height="262"/>
         <namedColor name="RedColor">
-            <color red="0.92941176470588238" green="0.098039215686274508" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92900002002716064" green="0.097999997437000275" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
