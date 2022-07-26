@@ -223,7 +223,7 @@
                                                 <rect key="frame" x="0.0" y="373" width="414" height="1"/>
                                                 <color key="backgroundColor" systemColor="labelColor"/>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qzG-Ez-7vh">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzG-Ez-7vh">
                                                 <rect key="frame" x="17" y="422.5" width="377" height="128"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
