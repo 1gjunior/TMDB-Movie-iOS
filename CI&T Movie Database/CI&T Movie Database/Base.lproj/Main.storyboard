@@ -76,7 +76,7 @@
             <objects>
                 <tableViewController id="9UT-HZ-kVa" customClass="CastCrewTableViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2G1-SW-W2P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -259,7 +259,16 @@
                                                 <rect key="frame" x="323" y="606" width="75" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="View All"/>
+                                                <connections>
+                                                    <segue destination="9UT-HZ-kVa" kind="presentation" id="o4m-q0-Ljg"/>
+                                                </connections>
                                             </button>
+                                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNl-X4-sfi">
+                                                <rect key="frame" x="0.0" y="640" width="414" height="340"/>
+                                                <connections>
+                                                    <segue destination="9UT-HZ-kVa" kind="embed" id="Xr4-YK-leC"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -276,6 +285,7 @@
                                             <constraint firstItem="NKg-6w-phR" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="20" symbolic="YES" id="GOF-nf-Fkt"/>
                                             <constraint firstItem="RcW-Hv-fJr" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="17" id="IaC-cl-fs5"/>
                                             <constraint firstItem="uAC-33-vf5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Y40-MN-JCv" secondAttribute="trailing" constant="8" symbolic="YES" id="JUj-Fg-kC3"/>
+                                            <constraint firstAttribute="bottom" secondItem="qNl-X4-sfi" secondAttribute="bottom" constant="20" symbolic="YES" id="Jlo-Df-BNb"/>
                                             <constraint firstItem="y2x-9z-SL2" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="80" id="MQD-rP-JUx"/>
                                             <constraint firstItem="y2x-9z-SL2" firstAttribute="leading" secondItem="Y40-MN-JCv" secondAttribute="leading" id="NAX-jd-ocp"/>
                                             <constraint firstItem="Lxx-KI-qve" firstAttribute="trailing" secondItem="zLW-bH-8gu" secondAttribute="trailing" id="P19-zx-top"/>
@@ -287,11 +297,13 @@
                                             <constraint firstItem="RcW-Hv-fJr" firstAttribute="top" secondItem="drn-dZ-5UU" secondAttribute="bottom" constant="8" symbolic="YES" id="YAG-Xd-6zK"/>
                                             <constraint firstItem="dxI-62-hyB" firstAttribute="top" secondItem="Lxx-KI-qve" secondAttribute="bottom" constant="15" id="a26-4M-NZC"/>
                                             <constraint firstItem="9YH-P2-Fkr" firstAttribute="trailing" secondItem="qzG-Ez-7vh" secondAttribute="trailing" id="ab6-Ag-sQd"/>
-                                            <constraint firstItem="RIG-u6-7j8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RcW-Hv-fJr" secondAttribute="trailing" symbolic="YES" id="b3P-Tf-wtd"/>
+                                            <constraint firstItem="RIG-u6-7j8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RcW-Hv-fJr" secondAttribute="trailing" constant="8" symbolic="YES" id="b3P-Tf-wtd"/>
+                                            <constraint firstAttribute="trailing" secondItem="qNl-X4-sfi" secondAttribute="trailing" id="bzf-28-MBO"/>
                                             <constraint firstItem="NKg-6w-phR" firstAttribute="top" secondItem="zLW-bH-8gu" secondAttribute="bottom" constant="8" id="cot-M0-NNT"/>
                                             <constraint firstItem="9YH-P2-Fkr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="20" symbolic="YES" id="dMd-Yb-1Mq"/>
                                             <constraint firstItem="Lxx-KI-qve" firstAttribute="leading" secondItem="zLW-bH-8gu" secondAttribute="leading" id="eBJ-hh-Jhf"/>
                                             <constraint firstItem="H8V-qc-OOT" firstAttribute="baseline" secondItem="Y40-MN-JCv" secondAttribute="baseline" id="g7B-Wj-Fb1"/>
+                                            <constraint firstItem="qNl-X4-sfi" firstAttribute="top" secondItem="RcW-Hv-fJr" secondAttribute="bottom" constant="8" symbolic="YES" id="h3J-UJ-gJ4"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H8V-qc-OOT" secondAttribute="trailing" constant="20" symbolic="YES" id="hMW-Ss-w85"/>
                                             <constraint firstAttribute="trailing" secondItem="qzG-Ez-7vh" secondAttribute="trailing" constant="20" symbolic="YES" id="hlQ-Ie-yTL"/>
                                             <constraint firstItem="zLW-bH-8gu" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" id="is3-g9-ybx"/>
@@ -300,6 +312,7 @@
                                             <constraint firstItem="H8V-qc-OOT" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" constant="163" id="m2X-Wb-8Ag"/>
                                             <constraint firstItem="y2x-9z-SL2" firstAttribute="top" secondItem="XW7-rM-s8k" secondAttribute="top" constant="336" id="m4p-Gn-bTZ"/>
                                             <constraint firstAttribute="trailing" secondItem="RIG-u6-7j8" secondAttribute="trailing" constant="16" id="qLk-kk-7K4"/>
+                                            <constraint firstItem="qNl-X4-sfi" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" id="qi7-Ww-hDv"/>
                                             <constraint firstItem="drn-dZ-5UU" firstAttribute="top" secondItem="9YH-P2-Fkr" secondAttribute="bottom" constant="8" symbolic="YES" id="qkF-qe-w0e"/>
                                             <constraint firstItem="RIG-u6-7j8" firstAttribute="top" secondItem="RcW-Hv-fJr" secondAttribute="top" id="qq5-Mm-y7u"/>
                                             <constraint firstAttribute="trailing" secondItem="drn-dZ-5UU" secondAttribute="trailing" id="qxM-QI-e3B"/>
@@ -467,6 +480,9 @@
             <point key="canvasLocation" x="-823.1884057971015" y="-556.47321428571422"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="o4m-q0-Ljg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="john-wick-detail" width="375" height="262"/>
         <namedColor name="RedColor">
