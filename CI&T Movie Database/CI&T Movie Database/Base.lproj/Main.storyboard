@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -260,7 +261,7 @@
                                     <segment title="Now Playing"/>
                                     <segment title="Coming Soon"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.92941176469999998" green="0.098039215690000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" name="RedColor"/>
                                 <connections>
                                     <action selector="segmentedDidChange:" destination="d7t-8Y-YQQ" eventType="valueChanged" id="pse-n9-vUH"/>
                                 </connections>
@@ -289,6 +290,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="RedColor">
+            <color red="0.92941176470588238" green="0.098039215686274508" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
