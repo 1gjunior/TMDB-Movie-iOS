@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-GP-IeL">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="765"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jZI-bz-KHT">
                                     <size key="itemSize" width="400" height="800"/>
@@ -254,18 +254,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-Z8-Kqt">
+                                <rect key="frame" x="8" y="44" width="398" height="32"/>
+                                <segments>
+                                    <segment title="Now Playing"/>
+                                    <segment title="Coming Soon"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.92941176469999998" green="0.098039215690000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qbl-me-MxW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tJd-Z8-Kqt" firstAttribute="top" secondItem="qbl-me-MxW" secondAttribute="top" id="2Qw-eW-xZX"/>
+                            <constraint firstItem="wNY-GP-IeL" firstAttribute="top" secondItem="tJd-Z8-Kqt" secondAttribute="bottom" constant="22" id="5TJ-3A-r4P"/>
+                            <constraint firstItem="tJd-Z8-Kqt" firstAttribute="leading" secondItem="qbl-me-MxW" secondAttribute="leading" constant="8" id="K0M-ah-udx"/>
+                            <constraint firstItem="qbl-me-MxW" firstAttribute="trailing" secondItem="tJd-Z8-Kqt" secondAttribute="trailing" constant="8" id="Kt8-jW-ZQ0"/>
                             <constraint firstItem="wNY-GP-IeL" firstAttribute="leading" secondItem="qbl-me-MxW" secondAttribute="leading" id="Tm8-5B-vYk"/>
-                            <constraint firstItem="wNY-GP-IeL" firstAttribute="top" secondItem="qbl-me-MxW" secondAttribute="top" constant="30" id="gKo-Vl-Oxt"/>
                             <constraint firstItem="qbl-me-MxW" firstAttribute="trailing" secondItem="wNY-GP-IeL" secondAttribute="trailing" id="k0l-Rx-ADS"/>
                             <constraint firstItem="qbl-me-MxW" firstAttribute="bottom" secondItem="wNY-GP-IeL" secondAttribute="bottom" id="pRB-HE-1Zk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="wNY-GP-IeL" id="jAi-rd-11O"/>
+                        <outlet property="movieSegmentedControl" destination="tJd-Z8-Kqt" id="CKO-hN-JSP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdQ-xK-B8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
