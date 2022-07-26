@@ -261,6 +261,9 @@
                                     <segment title="Coming Soon"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.92941176469999998" green="0.098039215690000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedDidChange:" destination="d7t-8Y-YQQ" eventType="valueChanged" id="pse-n9-vUH"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qbl-me-MxW"/>
