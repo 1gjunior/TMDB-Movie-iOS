@@ -5,6 +5,7 @@
 //  Created by Gilberto Junior on 25/07/22.
 //
 
+import Kingfisher
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
@@ -15,4 +16,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var releaseDateLabel: UILabel!
     @IBOutlet var pipeLabel: UILabel!
     @IBOutlet var voteAverageLabel: UILabel!
+
+    func configure(_ movie: Movie) {
+        movieImageView.kf.setImage(with: movie.posterURL)
+    }
 }

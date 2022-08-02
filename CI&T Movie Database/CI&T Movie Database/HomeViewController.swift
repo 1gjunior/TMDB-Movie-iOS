@@ -14,6 +14,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
 
+    func fetchMovies() {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MoviesResponse?
+            do {
+                result = try JSONDecoder().decode(MoviesResponse.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result?.results else { return }
+            print(finalResult)
+            self.nowPlayingMovies = finalResult
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }).resume()
+    }
+
     @IBAction func segmentedDidChange(_: UISegmentedControl) {
         if movieSegmentedControl.selectedSegmentIndex == 1 {
             data = comingSoonMoves
@@ -36,24 +58,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let voteAverage: String
     }
 
-    let nowPlayingMovies: [MovieHome] = [
-        MovieHome(profileImageName: "john-wick-movie", title: "John Wick 3", genre: "Crime", releaseDate: "22-10-2019", voteAverage: "7.5"),
-        MovieHome(profileImageName: "captain-marvel-movie", title: "Captain Marvel", genre: "Action", releaseDate: "16-11-2019", voteAverage: "9.5"),
-        MovieHome(profileImageName: "john-wick-movie", title: "John Wick 3", genre: "Crime", releaseDate: "22-10-2019", voteAverage: "7.5"),
-        MovieHome(profileImageName: "john-wick-movie", title: "John Wick 3", genre: "Crime", releaseDate: "22-10-2019", voteAverage: "7.5"),
-        MovieHome(profileImageName: "captain-marvel-movie", title: "Captain Marvel", genre: "Action", releaseDate: "16-11-2019", voteAverage: "9.5"),
-        MovieHome(profileImageName: "john-wick-movie", title: "John Wick 3", genre: "Crime", releaseDate: "22-10-2019", voteAverage: "7.5"),
-        MovieHome(profileImageName: "john-wick-movie", title: "John Wick 3", genre: "Crime", releaseDate: "22-10-2019", voteAverage: "7.5"),
-    ]
+    var nowPlayingMovies: [Movie] = []
 
-    let comingSoonMoves: [MovieHome] = [
-        MovieHome(profileImageName: "us-movie", title: "US", genre: "Thriller", releaseDate: "12-02-2020", voteAverage: "9.5"),
-        MovieHome(profileImageName: "joker-movie", title: "Joker", genre: "Drama", releaseDate: "27-02-2020", voteAverage: "8.5"),
-        MovieHome(profileImageName: "us-movie", title: "US", genre: "Thriller", releaseDate: "12-02-2020", voteAverage: "9.5"),
-        MovieHome(profileImageName: "us-movie", title: "US", genre: "Thriller", releaseDate: "12-02-2020", voteAverage: "9.5"),
-        MovieHome(profileImageName: "joker-movie", title: "Joker", genre: "Drama", releaseDate: "27-02-2020", voteAverage: "8.5"),
-        MovieHome(profileImageName: "joker-movie", title: "Joker", genre: "Drama", releaseDate: "27-02-2020", voteAverage: "8.5"),
-    ]
+    let comingSoonMoves: [Movie] = []
 
     lazy var data = nowPlayingMovies
 
@@ -61,6 +68,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        fetchMovies()
     }
 
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
@@ -68,16 +76,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let movieHome = data[indexPath.row]
-        let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
-        homeCell.movieImageView.image = UIImage(named: movieHome.profileImageName)
-        homeCell.titleLabel.text = movieHome.title
-        homeCell.genreLabel.text = movieHome.genre
-        homeCell.middleDotLabel.text = movieHome.middleDot
-        homeCell.releaseDateLabel.text = movieHome.releaseDate
-        homeCell.pipeLabel.text = movieHome.pipe
-        homeCell.voteAverageLabel.text = movieHome.voteAverage
+        let movie = data[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
 
-        return homeCell
+        cell.titleLabel.text = movie.title
+        cell.releaseDateLabel.text = movie.releaseDate
+        cell.voteAverageLabel.text = String(format: "%.1f", movie.voteAverage)
+        cell.configure(movie)
+        return cell
     }
 }
