@@ -18,6 +18,10 @@ struct MoviesResponse: Codable {
     }
 }
 
+struct MoviesGenreResponse: Codable {
+    let genres: [MovieGenre]
+}
+
 struct Movie: Codable {
     let id: Int
     let title: String
@@ -29,8 +33,9 @@ struct Movie: Codable {
     let voteCount: Int
     let tagline: String?
     let genres: [MovieGenre]?
+    let genreIds: [Int]
     var posterURL: URL {
-        return URL(string: "https://image.tmdb.org/t/p/w185\(posterPath ?? "")")!
+        return URL(string: "https://image.tmdb.org/t/p/w154\(posterPath ?? "")")!
     }
 
     var backdropURL: URL {
@@ -38,22 +43,23 @@ struct Movie: Codable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, title, backdropPath = "backdrop_path", posterPath = "poster_path", overview, releaseDate = "release_date", voteAverage = "vote_average", voteCount = "vote_count", tagline, genres
+        case id, title, backdropPath = "backdrop_path", posterPath = "poster_path", overview, releaseDate = "release_date", voteAverage = "vote_average", voteCount = "vote_count", tagline, genres, genreIds = "genre_ids"
     }
 }
 
 struct MovieGenre: Codable {
+    let id: Int
     let name: String
 }
 
 struct MovieCast: Codable {
-    public let character: String
-    public let name: String
+    let character: String
+    let name: String
 }
 
 struct MovieCrew: Codable {
-    public let id: Int
-    public let department: String
-    public let job: String
-    public let name: String
+    let id: Int
+    let department: String
+    let job: String
+    let name: String
 }

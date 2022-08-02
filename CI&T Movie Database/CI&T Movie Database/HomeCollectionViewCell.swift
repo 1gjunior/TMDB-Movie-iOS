@@ -18,6 +18,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var voteAverageLabel: UILabel!
 
     func configure(_ movie: Movie) {
+        movieImageView.kf.indicatorType = .activity
         movieImageView.kf.setImage(with: movie.posterURL)
     }
 }

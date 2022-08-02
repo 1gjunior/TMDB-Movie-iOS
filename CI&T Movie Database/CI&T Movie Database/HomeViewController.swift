@@ -14,6 +14,26 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
 
+    func fetchGenres() {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MoviesGenreResponse?
+            do {
+                result = try JSONDecoder().decode(MoviesGenreResponse.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result?.genres else { return }
+            self.genres.append(contentsOf: finalResult)
+//            print(finalResult)
+
+        }).resume()
+    }
+
     func fetchMovies() {
         URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
 
@@ -28,14 +48,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
 
             guard let finalResult = result?.results else { return }
-            print(finalResult)
+//            print(finalResult)
             self.data.append(contentsOf: finalResult)
             self.nowPlayingMovies.append(contentsOf: finalResult)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }).resume()
-        
+
         URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
 
             guard let data = data, error == nil else {
@@ -49,7 +69,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
 
             guard let finalResult = result?.results else { return }
-            print(finalResult)
+//            print(finalResult)
             self.comingSoonMoves.append(contentsOf: finalResult)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -75,6 +95,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     lazy var data: [Movie] = []
 
+    lazy var genres: [MovieGenre] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,6 +105,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         collectionView.dataSource = self
         collectionView.delegate = self
+        fetchGenres()
         fetchMovies()
     }
 
@@ -97,6 +120,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.titleLabel.text = movie.title
         cell.releaseDateLabel.text = movie.releaseDate
         cell.voteAverageLabel.text = String(format: "%.1f", movie.voteAverage)
+
+        let movieGenre = genres.filter { $0.id == movie.genreIds.first }
+
+        cell.genreLabel.text = movieGenre.first?.name
         cell.configure(movie)
         return cell
     }
