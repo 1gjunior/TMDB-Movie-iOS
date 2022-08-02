@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet var movieSegmentedControl: UISegmentedControl! {
         didSet {
             movieSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
@@ -48,16 +48,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet var collectionView: UICollectionView!
 
-    struct MovieHome {
-        let profileImageName: String
-        let title: String
-        let genre: String
-        let middleDot: String = "·"
-        let releaseDate: String
-        let pipe: String = "|"
-        let voteAverage: String
-    }
-
     var nowPlayingMovies: [Movie] = []
 
     let comingSoonMoves: [Movie] = []
@@ -66,6 +56,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let layout = UICollectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
+
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchMovies()
@@ -84,5 +78,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.voteAverageLabel.text = String(format: "%.1f", movie.voteAverage)
         cell.configure(movie)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize
+    {
+        let leftAndRightPaddings: CGFloat = 45.0
+        let numberOfItemsPerRow: CGFloat = 2.0
+
+        let width = (collectionView.frame.width - leftAndRightPaddings) / numberOfItemsPerRow
+        return CGSize(width: width, height: 310)
     }
 }
