@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7t-8Y-YQQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kek-DP-uvk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -69,14 +69,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HG-cY-DbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75.362318840579718" y="-556.47321428571422"/>
+            <point key="canvasLocation" x="834.78260869565224" y="-556.47321428571422"/>
         </scene>
         <!--Cast Crew Table View Controller-->
         <scene sceneID="PKM-k5-9ci">
             <objects>
                 <tableViewController id="9UT-HZ-kVa" customClass="CastCrewTableViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2G1-SW-W2P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -158,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3X-WZ-vED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.49275362318849" y="-556.47321428571422"/>
+            <point key="canvasLocation" x="1624.6376811594205" y="-556.47321428571422"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="uaC-M8-aCA">
@@ -169,13 +169,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJ8-KT-6qU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW7-rM-s8k">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="john-wick-detail" translatesAutoresizingMaskIntoConstraints="NO" id="zLW-bH-8gu">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="262" id="TYj-Ee-Rf0"/>
+                                                </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick 3: Parabellum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NKg-6w-phR">
                                                 <rect key="frame" x="20" y="270" width="338" height="34"/>
@@ -269,7 +272,7 @@
                                                     <constraint firstAttribute="height" constant="270" id="b2h-MC-rwV"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="9UT-HZ-kVa" kind="embed" id="Xr4-YK-leC"/>
+                                                    <segue destination="9UT-HZ-kVa" kind="embed" identifier="castAndCrewSegue" id="Xr4-YK-leC"/>
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-hn-MM4">
@@ -396,7 +399,14 @@
                             <constraint firstItem="erc-c3-J3M" firstAttribute="bottom" secondItem="eJ8-KT-6qU" secondAttribute="bottom" id="cCD-yd-TlO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G7e-cj-VSY"/>
                     <connections>
+                        <outlet property="movieDuration" destination="Y40-MN-JCv" id="6PO-ie-lYc"/>
+                        <outlet property="movieGenres" destination="y2x-9z-SL2" id="Xch-mo-2ZW"/>
+                        <outlet property="movieImageView" destination="zLW-bH-8gu" id="z60-Xu-pOv"/>
+                        <outlet property="movieIsAdult" destination="H8V-qc-OOT" id="z9o-64-bFM"/>
+                        <outlet property="movieTitle" destination="NKg-6w-phR" id="INu-A9-5ug"/>
+                        <outlet property="movieVoteAverage" destination="uyl-Cg-e4m" id="s1d-Re-9OI"/>
                         <outlet property="showButton" destination="9YH-P2-Fkr" id="fC4-X9-ZZx"/>
                         <outlet property="textView" destination="qzG-Ez-7vh" id="d6C-3L-8yQ"/>
                         <outlet property="textViewHeight" destination="RdD-UX-XXR" id="GUD-2Q-WGa"/>
@@ -404,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6Q-Ad-e3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1577" y="-556"/>
+            <point key="canvasLocation" x="128.98550724637681" y="-556.47321428571422"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Xyi-sk-f15">
@@ -415,7 +425,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-GP-IeL">
-                                <rect key="frame" x="0.0" y="97" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jZI-bz-KHT">
                                     <size key="itemSize" width="400" height="800"/>
@@ -497,12 +507,13 @@
                                             <outlet property="releaseDateLabel" destination="gth-5t-8K4" id="OYa-lc-Gg9"/>
                                             <outlet property="titleLabel" destination="BWw-rD-O6M" id="OfO-0s-cU2"/>
                                             <outlet property="voteAverageLabel" destination="tpt-GU-jzr" id="Qoh-s7-Xqm"/>
+                                            <segue destination="duu-ps-We5" kind="show" identifier="movieDetailSegue" id="RDA-rh-Gzd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-Z8-Kqt">
-                                <rect key="frame" x="8" y="44" width="398" height="32"/>
+                                <rect key="frame" x="8" y="88" width="398" height="32"/>
                                 <segments>
                                     <segment title="Now Playing"/>
                                     <segment title="Coming Soon"/>
@@ -525,6 +536,7 @@
                             <constraint firstItem="qbl-me-MxW" firstAttribute="bottom" secondItem="wNY-GP-IeL" secondAttribute="bottom" id="pRB-HE-1Zk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NAP-pY-e4T"/>
                     <connections>
                         <outlet property="collectionView" destination="wNY-GP-IeL" id="jAi-rd-11O"/>
                         <outlet property="movieSegmentedControl" destination="tJd-Z8-Kqt" id="CKO-hN-JSP"/>
@@ -532,11 +544,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdQ-xK-B8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823.1884057971015" y="-556.47321428571422"/>
+            <point key="canvasLocation" x="-576.81159420289862" y="-556.47321428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LeY-3F-N54">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kek-DP-uvk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8yE-fV-kpb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d7t-8Y-YQQ" kind="relationship" relationship="rootViewController" id="Gh7-jb-010"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vE1-B4-Vmi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1486.9565217391305" y="-556.47321428571422"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="o4m-q0-Ljg"/>
+        <segue reference="Xr4-YK-leC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="john-wick-detail" width="375" height="262"/>

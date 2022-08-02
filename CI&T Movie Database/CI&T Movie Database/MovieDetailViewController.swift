@@ -5,11 +5,20 @@
 //  Created by Gilberto Junior on 26/07/22.
 //
 
+import Kingfisher
 import UIKit
 
 class MovieDetailViewController: UIViewController {
+    var movieId: Int?
+    
     @IBOutlet var textView: UITextView!
-
+    @IBOutlet var movieTitle: UILabel!
+    @IBOutlet var movieVoteAverage: UILabel!
+    @IBOutlet var movieImageView: UIImageView!
+    @IBOutlet var movieDuration: UILabel!
+    @IBOutlet var movieGenres: UILabel!
+    @IBOutlet var movieIsAdult: UILabel!
+    
     @IBOutlet var showButton: UIButton!
     @IBOutlet var textViewHeight: NSLayoutConstraint!
     @IBAction func showButtonClick(_ sender: UIButton) {
@@ -24,19 +33,58 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
-    struct MovieDetailInfo {
-        let title: String
-        let voteAverage: String
-        let duration: String
-        let pipe: String = "|"
-        let rating: String
-        let genres: [String]
-        let synopsis: String
-    }
 
-    let movieDetailInfo: MovieDetailInfo = .init(title: "John Wick 3: Parabellum", voteAverage: "4.6", duration: "2hr 10", rating: "R", genres: ["Action", "Crime", "Thriller"], synopsis: "With the untimely death of his beloved wife still bitter in his mouth, John Wick, the expert former assassin, receives one final gift from her--a precious keepsake to help John find a new meaning in life now that she is gone. But when the arrogant Russian mob prince, Iosef Tarasov, and his men pay Wick a rather unwelcome visit to rob him of his prized 1969 Mustang and his wife's present, the legendary hitman will be forced to unearth his meticulously concealed identity. Blind with revenge, John will immediately unleash a carefully orchestrated maelstrom of destruction against the sophisticated kingpin, Viggo Tarasov, and his family, who are fully aware of his lethal capacity. Now, only blood can quench the boogeyman's thirst for retribution.")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchMovieDetail()
     }
+
+    func fetchMovieDetail() {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId!)?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MovieDetail?
+            do {
+                result = try JSONDecoder().decode(MovieDetail.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result else { return }
+            DispatchQueue.main.async {
+                self.textView.text = finalResult.overview
+                self.movieTitle.text = finalResult.title
+                self.movieVoteAverage.text = String(format: "%.1f", finalResult.voteAverage)
+                self.movieImageView.kf.indicatorType = .activity
+                self.movieImageView.kf.setImage(with: finalResult.backdropURL)
+                self.movieDuration.text = finalResult.duration
+                self.movieIsAdult.text = finalResult.adult ? "R" : ""
+                
+                var genreNames: [String] = []
+                
+                for genre in finalResult.genres! {
+                    genreNames.append(genre.name)
+                }
+                
+                self.movieGenres.text = genreNames.joined(separator: ", ")
+                
+                
+                
+            }
+
+        }).resume()
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? MovieDetailViewController,
+           segue.identifier == "castAndCrewSegue"
+        {
+            destinationVC.movieId = self.movieId
+        }
+    }
+    
 }

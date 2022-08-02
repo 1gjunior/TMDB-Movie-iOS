@@ -63,3 +63,27 @@ struct MovieCrew: Codable {
     let job: String
     let name: String
 }
+
+struct MovieDetail: Codable {
+    let title: String
+    let voteAverage: Double
+    let backdropPath: String?
+    let runtime: Int?
+    let adult: Bool
+    let genres: [MovieGenre]?
+    let overview: String
+
+    var backdropURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/original\(backdropPath ?? "")")!
+    }
+    
+    var duration: String {
+        let hours = Int(round(Double((runtime ?? 0)/60)))
+        let minutes = (runtime ?? 0) % 60
+        return "\(hours)hr \(minutes)m"
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case title, backdropPath = "backdrop_path", voteAverage = "vote_average", adult, genres, overview, runtime
+    }
+}

@@ -41,13 +41,13 @@ class CastCrewTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cast = data[indexPath.row]
-        let castCell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastCrewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastCrewTableViewCell
 
-        castCell.profileImageView.image = UIImage(named: cast.profileImage)
-        castCell.realName.text = cast.realName
-        castCell.threeDotsImageView.image = UIImage(named: cast.threeDots)
-        castCell.charName.text = cast.charName.uppercased()
+        cell.profileImageView.image = UIImage(named: cast.profileImage)
+        cell.realName.text = cast.realName
+        cell.threeDotsImageView.image = UIImage(named: cast.threeDots)
+        cell.charName.text = cast.charName.uppercased()
 
-        return castCell
+        return cell
     }
 }

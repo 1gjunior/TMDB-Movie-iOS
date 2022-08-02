@@ -49,9 +49,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
             guard let finalResult = result?.results else { return }
 //            print(finalResult)
-            self.data.append(contentsOf: finalResult)
-            self.nowPlayingMovies.append(contentsOf: finalResult)
+
             DispatchQueue.main.async {
+                self.data = finalResult
+                self.nowPlayingMovies = finalResult
                 self.collectionView.reloadData()
             }
         }).resume()
@@ -70,8 +71,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
             guard let finalResult = result?.results else { return }
 //            print(finalResult)
-            self.comingSoonMoves.append(contentsOf: finalResult)
+           
             DispatchQueue.main.async {
+                self.comingSoonMoves = (finalResult)
                 self.collectionView.reloadData()
             }
         }).resume()
@@ -90,12 +92,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet var collectionView: UICollectionView!
 
     lazy var nowPlayingMovies: [Movie] = []
-
     lazy var comingSoonMoves: [Movie] = []
-
     lazy var data: [Movie] = []
-
     lazy var genres: [MovieGenre] = []
+    var movieId: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +109,22 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         fetchMovies()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if let destinationVC = segue.destination as? MovieDetailViewController,
+           segue.identifier == "movieDetailSegue"
+        {
+            destinationVC.movieId = self.movieId
+        }
+    }
+
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return data.count
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieId = data[indexPath.row].id
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let movie = data[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
