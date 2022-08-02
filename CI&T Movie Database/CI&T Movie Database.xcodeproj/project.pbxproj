@@ -156,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */,
-				299BBA43287DD7CD00ADE88D /* Database */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
 				294CB19A288F1FA2008DD76B /* HomeViewController.swift */,
 				29590D642888E87600E351F4 /* Fonts */,
@@ -181,13 +180,6 @@
 				299BBA41287DD18B00ADE88D /* Movie.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		299BBA43287DD7CD00ADE88D /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		6C9DC7EA590D849BE1BA178F /* Frameworks */ = {

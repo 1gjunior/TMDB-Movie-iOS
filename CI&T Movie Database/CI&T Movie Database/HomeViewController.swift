@@ -82,10 +82,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize
     {
-        let leftAndRightPaddings: CGFloat = 45.0
+        let leftAndRightPaddings: CGFloat = 10.0
         let numberOfItemsPerRow: CGFloat = 2.0
 
         let width = (collectionView.frame.width - leftAndRightPaddings) / numberOfItemsPerRow
-        return CGSize(width: width, height: 310)
+        return CGSize(width: width, height: 300)
     }
 }
