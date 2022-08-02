@@ -29,7 +29,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
             guard let finalResult = result?.results else { return }
             print(finalResult)
-            self.nowPlayingMovies = finalResult
+            self.data.append(contentsOf: finalResult)
+            self.nowPlayingMovies.append(contentsOf: finalResult)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }).resume()
+        
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MoviesResponse?
+            do {
+                result = try JSONDecoder().decode(MoviesResponse.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result?.results else { return }
+            print(finalResult)
+            self.comingSoonMoves.append(contentsOf: finalResult)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -48,11 +69,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet var collectionView: UICollectionView!
 
-    var nowPlayingMovies: [Movie] = []
+    lazy var nowPlayingMovies: [Movie] = []
 
-    let comingSoonMoves: [Movie] = []
+    lazy var comingSoonMoves: [Movie] = []
 
-    lazy var data = nowPlayingMovies
+    lazy var data: [Movie] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
