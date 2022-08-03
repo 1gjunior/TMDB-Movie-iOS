@@ -22,6 +22,11 @@ struct MoviesGenreResponse: Codable {
     let genres: [MovieGenre]
 }
 
+struct MovieCastAndCrewResponse: Codable {
+    let id: Int
+    let cast, crew: [CastAndCrew]
+}
+
 struct Movie: Codable {
     let id: Int
     let title: String
@@ -52,16 +57,28 @@ struct MovieGenre: Codable {
     let name: String
 }
 
-struct MovieCast: Codable {
-    let character: String
-    let name: String
-}
+struct CastAndCrew: Codable {
+    let adult: Bool
+    let gender, id: Int
+    let name, originalName: String
+    let popularity: Double
+    let profilePath: String?
+    let character: String?
+    let job: String?
 
-struct MovieCrew: Codable {
-    let id: Int
-    let department: String
-    let job: String
-    let name: String
+    var profileURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/w154\(profilePath ?? "")")!
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case adult, gender, id
+        case name
+        case originalName = "original_name"
+        case popularity
+        case profilePath = "profile_path"
+        case character
+        case job
+    }
 }
 
 struct MovieDetail: Codable {
@@ -76,9 +93,9 @@ struct MovieDetail: Codable {
     var backdropURL: URL {
         return URL(string: "https://image.tmdb.org/t/p/original\(backdropPath ?? "")")!
     }
-    
+
     var duration: String {
-        let hours = Int(round(Double((runtime ?? 0)/60)))
+        let hours = Int(round(Double((runtime ?? 0) / 60)))
         let minutes = (runtime ?? 0) % 60
         return "\(hours)hr \(minutes)m"
     }

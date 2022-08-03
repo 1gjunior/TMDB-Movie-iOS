@@ -9,8 +9,8 @@ import Kingfisher
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-    var movieId: Int?
-    
+    var movieId: Int = 0
+
     @IBOutlet var textView: UITextView!
     @IBOutlet var movieTitle: UILabel!
     @IBOutlet var movieVoteAverage: UILabel!
@@ -18,7 +18,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet var movieDuration: UILabel!
     @IBOutlet var movieGenres: UILabel!
     @IBOutlet var movieIsAdult: UILabel!
-    
+
     @IBOutlet var showButton: UIButton!
     @IBOutlet var textViewHeight: NSLayoutConstraint!
     @IBAction func showButtonClick(_ sender: UIButton) {
@@ -33,15 +33,8 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchMovieDetail()
-    }
-
     func fetchMovieDetail() {
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId!)?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
 
             guard let data = data, error == nil else {
                 return
@@ -62,29 +55,29 @@ class MovieDetailViewController: UIViewController {
                 self.movieImageView.kf.setImage(with: finalResult.backdropURL)
                 self.movieDuration.text = finalResult.duration
                 self.movieIsAdult.text = finalResult.adult ? "R" : ""
-                
+
                 var genreNames: [String] = []
-                
+
                 for genre in finalResult.genres! {
                     genreNames.append(genre.name)
                 }
-                
+
                 self.movieGenres.text = genreNames.joined(separator: ", ")
-                
-                
-                
             }
 
         }).resume()
     }
 
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? MovieDetailViewController,
-           segue.identifier == "castAndCrewSegue"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchMovieDetail()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if let destinationVC = segue.destination as? CastCrewTableViewController,
+           segue.identifier == "castAndCrewSegue" || segue.identifier == "castAndCrewButtonSegue"
         {
-            destinationVC.movieId = self.movieId
+            destinationVC.movieId = movieId
         }
     }
-    
 }

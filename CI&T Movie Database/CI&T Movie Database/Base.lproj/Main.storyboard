@@ -76,7 +76,7 @@
             <objects>
                 <tableViewController id="9UT-HZ-kVa" customClass="CastCrewTableViewController" customModule="CI_T_Movie_Database" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2G1-SW-W2P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -263,7 +263,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="View All"/>
                                                 <connections>
-                                                    <segue destination="9UT-HZ-kVa" kind="presentation" id="o4m-q0-Ljg"/>
+                                                    <segue destination="9UT-HZ-kVa" kind="presentation" identifier="castAndCrewButtonSegue" id="o4m-q0-Ljg"/>
                                                 </connections>
                                             </button>
                                             <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNl-X4-sfi">
@@ -507,7 +507,6 @@
                                             <outlet property="releaseDateLabel" destination="gth-5t-8K4" id="OYa-lc-Gg9"/>
                                             <outlet property="titleLabel" destination="BWw-rD-O6M" id="OfO-0s-cU2"/>
                                             <outlet property="voteAverageLabel" destination="tpt-GU-jzr" id="Qoh-s7-Xqm"/>
-                                            <segue destination="duu-ps-We5" kind="show" identifier="movieDetailSegue" id="RDA-rh-Gzd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -540,6 +539,7 @@
                     <connections>
                         <outlet property="collectionView" destination="wNY-GP-IeL" id="jAi-rd-11O"/>
                         <outlet property="movieSegmentedControl" destination="tJd-Z8-Kqt" id="CKO-hN-JSP"/>
+                        <segue destination="duu-ps-We5" kind="show" identifier="movieDetailSegue" id="uIN-4P-gRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdQ-xK-B8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -566,7 +566,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xr4-YK-leC"/>
+        <segue reference="o4m-q0-Ljg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="john-wick-detail" width="375" height="262"/>

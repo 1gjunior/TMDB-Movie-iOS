@@ -5,34 +5,44 @@
 //  Created by Gilberto Junior on 25/07/22.
 //
 
+import Kingfisher
 import UIKit
 
 class CastCrewTableViewController: UITableViewController {
+    var data: [CastAndCrew] = []
+    var movieId: Int = 0
+
     @IBOutlet var table: UITableView!
 
-    struct Cast {
-        let profileImage: String
-        let realName: String
-        let threeDots: String
-        let charName: String
-    }
+    func fetchCastAndCrew() {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
 
-    let data: [Cast] = [
-        Cast(profileImage: "Keanu_Reeves", realName: "Keanu Reeves", threeDots: "Three_Dots", charName: "John Wick"),
-        Cast(profileImage: "Halle_Berry", realName: "Halle Berry", threeDots: "Three_Dots", charName: "Sofia"),
-        Cast(profileImage: "Laurence_Fishburne", realName: "Laurence Fishburne", threeDots: "Three_Dots", charName: "Bowery King"),
-        Cast(profileImage: "Mark_Dacascos", realName: "Mark Dacascos", threeDots: "Three_Dots", charName: "Zero"),
-        Cast(profileImage: "Asia_Kate_Dillon", realName: "Asia Kate Dillon", threeDots: "Three_Dots", charName: "Adjudicator"),
-        Cast(profileImage: "Lance_Reddick", realName: "Lance Reddick", threeDots: "Three_Dots", charName: "Charon"),
-        Cast(profileImage: "Anjelica_Huston", realName: "Anjelica Huston", threeDots: "Three_Dots", charName: "Director"),
-        Cast(profileImage: "Margaret_Daly", realName: "Margaret Daly", threeDots: "Three_Dots", charName: "Operator"),
-        Cast(profileImage: "Jerome_Flynn", realName: "Jerome Flynn", threeDots: "Three_Dots", charName: "Berrada"),
-    ]
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MovieCastAndCrewResponse?
+            do {
+                result = try JSONDecoder().decode(MovieCastAndCrewResponse.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result else { return }
+
+            DispatchQueue.main.async {
+                self.data = finalResult.cast
+                self.data += finalResult.crew
+                self.tableView.reloadData()
+            }
+
+        }).resume()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
+        fetchCastAndCrew()
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -40,13 +50,12 @@ class CastCrewTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cast = data[indexPath.row]
+        let castAndCrew = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastCrewTableViewCell
 
-        cell.profileImageView.image = UIImage(named: cast.profileImage)
-        cell.realName.text = cast.realName
-        cell.threeDotsImageView.image = UIImage(named: cast.threeDots)
-        cell.charName.text = cast.charName.uppercased()
+        cell.realName.text = castAndCrew.name
+        cell.charName.text = castAndCrew.character
+        cell.configure(castAndCrew)
 
         return cell
     }

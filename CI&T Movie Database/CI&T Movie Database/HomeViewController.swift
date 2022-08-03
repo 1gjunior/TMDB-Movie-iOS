@@ -29,7 +29,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
             guard let finalResult = result?.genres else { return }
             self.genres.append(contentsOf: finalResult)
-//            print(finalResult)
 
         }).resume()
     }
@@ -48,7 +47,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
 
             guard let finalResult = result?.results else { return }
-//            print(finalResult)
 
             DispatchQueue.main.async {
                 self.data = finalResult
@@ -70,10 +68,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
 
             guard let finalResult = result?.results else { return }
-//            print(finalResult)
-           
+
             DispatchQueue.main.async {
-                self.comingSoonMoves = (finalResult)
+                self.comingSoonMoves = finalResult
                 self.collectionView.reloadData()
             }
         }).resume()
@@ -109,11 +106,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         fetchMovies()
     }
 
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieId = data[indexPath.row].id
+        performSegue(withIdentifier: "movieDetailSegue", sender: self)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if let destinationVC = segue.destination as? MovieDetailViewController,
            segue.identifier == "movieDetailSegue"
         {
-            destinationVC.movieId = self.movieId
+            destinationVC.movieId = movieId
         }
     }
 
@@ -121,10 +123,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return data.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        movieId = data[indexPath.row].id
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let movie = data[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
