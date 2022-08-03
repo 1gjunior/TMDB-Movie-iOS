@@ -172,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW7-rM-s8k">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1109"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="john-wick-detail" translatesAutoresizingMaskIntoConstraints="NO" id="zLW-bH-8gu">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
@@ -297,10 +297,14 @@
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IPh-0W-UbO">
-                                                <rect key="frame" x="0.0" y="961" width="414" height="519"/>
+                                                <rect key="frame" x="0.0" y="961" width="414" height="128"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tJd-Yz-X7N">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="vby-Nf-EIK"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tJd-Yz-X7N">
                                                     <size key="itemSize" width="128" height="128"/>
+                                                    <size key="estimatedItemSize" width="200" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -313,7 +317,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-fb-WG1">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-fb-WG1">
                                                                     <rect key="frame" x="-56" y="-8" width="240" height="128"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
@@ -352,7 +356,6 @@
                                             <constraint firstItem="qzG-Ez-7vh" firstAttribute="leading" secondItem="dxI-62-hyB" secondAttribute="leading" multiplier="0.85" id="PVn-0B-Two"/>
                                             <constraint firstItem="drn-dZ-5UU" firstAttribute="leading" secondItem="XW7-rM-s8k" secondAttribute="leading" id="QVC-7t-xDp"/>
                                             <constraint firstItem="dxI-62-hyB" firstAttribute="top" secondItem="uyl-Cg-e4m" secondAttribute="bottom" constant="32" id="QnO-PB-bxm"/>
-                                            <constraint firstAttribute="height" constant="1500" id="R6n-P9-UAs"/>
                                             <constraint firstItem="gwO-hn-MM4" firstAttribute="top" secondItem="qNl-X4-sfi" secondAttribute="bottom" constant="8" symbolic="YES" id="Vw5-ff-Hsf"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dxI-62-hyB" secondAttribute="trailing" constant="20" symbolic="YES" id="X4D-Dy-KY0"/>
                                             <constraint firstItem="RcW-Hv-fJr" firstAttribute="top" secondItem="drn-dZ-5UU" secondAttribute="bottom" constant="8" symbolic="YES" id="YAG-Xd-6zK"/>
