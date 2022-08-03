@@ -95,7 +95,7 @@ struct MovieDetail: Codable {
     let overview: String
 
     var backdropURL: URL {
-        return URL(string: "https://image.tmdb.org/t/p/original\(backdropPath ?? "")")!
+        return URL(string: "https://image.tmdb.org/t/p/w1280\(backdropPath ?? "")")!
     }
 
     var duration: String {
@@ -113,7 +113,7 @@ struct MovieImages: Codable {
     let filePath: String?
 
     var fileURL: URL {
-        return URL(string: "https://image.tmdb.org/t/p/original\(filePath ?? "")")!
+        return URL(string: "https://image.tmdb.org/t/p/w780\(filePath ?? "")")!
     }
 
     private enum CodingKeys: String, CodingKey {
