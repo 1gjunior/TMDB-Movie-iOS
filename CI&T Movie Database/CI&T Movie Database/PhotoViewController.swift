@@ -8,18 +8,9 @@
 import UIKit
 
 class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var movieImages: [MovieImages] = []
+
     @IBOutlet var table: UITableView!
-
-    struct MovieImage {
-        let title: String
-        let imageName: String
-    }
-
-    let data: [MovieImage] = [
-        MovieImage(title: "image 1", imageName: "image 1"),
-        MovieImage(title: "image 2", imageName: "image 2"),
-        MovieImage(title: "image 3", imageName: "image 3"),
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +19,14 @@ class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return data.count
+        return movieImages.count
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let photoMovie = data[indexPath.row]
-        let photoCell = table.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoTableViewCell
+        let photo = movieImages[indexPath.row]
+        let cell = table.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoTableViewCell
 
-        photoCell.photoImageView.image = UIImage(named: photoMovie.imageName)
-
-        return photoCell
+        cell.configure(photo)
+        return cell
     }
 }

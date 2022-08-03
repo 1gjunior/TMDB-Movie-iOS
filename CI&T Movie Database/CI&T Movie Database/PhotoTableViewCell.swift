@@ -9,4 +9,9 @@ import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
     @IBOutlet var photoImageView: UIImageView!
+    
+    func configure(_ photo: MovieImages) {
+        photoImageView.kf.indicatorType = .activity
+        photoImageView.kf.setImage(with: photo.fileURL)
+    }
 }

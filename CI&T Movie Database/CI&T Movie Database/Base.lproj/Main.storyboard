@@ -293,7 +293,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="View All"/>
                                                 <connections>
-                                                    <segue destination="Akb-fO-ET2" kind="presentation" id="ajQ-bW-AuC"/>
+                                                    <segue destination="Akb-fO-ET2" kind="presentation" identifier="photoButtonSegue" id="ajQ-bW-AuC"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IPh-0W-UbO">
