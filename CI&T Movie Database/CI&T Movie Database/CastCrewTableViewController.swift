@@ -54,7 +54,7 @@ class CastCrewTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastCrewTableViewCell
 
         cell.realName.text = castAndCrew.name
-        cell.charName.text = castAndCrew.character
+        cell.charName.text = castAndCrew.character ?? castAndCrew.job
         cell.configure(castAndCrew)
 
         return cell
