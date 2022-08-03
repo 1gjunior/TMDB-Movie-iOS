@@ -27,6 +27,10 @@ struct MovieCastAndCrewResponse: Codable {
     let cast, crew: [CastAndCrew]
 }
 
+struct MovieImagesResponse: Codable {
+    let backdrops: [MovieImages]
+}
+
 struct Movie: Codable {
     let id: Int
     let title: String
@@ -102,5 +106,17 @@ struct MovieDetail: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case title, backdropPath = "backdrop_path", voteAverage = "vote_average", adult, genres, overview, runtime
+    }
+}
+
+struct MovieImages: Codable {
+    let filePath: String?
+
+    var fileURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/original\(filePath ?? "")")!
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case filePath = "file_path"
     }
 }

@@ -8,8 +8,11 @@
 import Kingfisher
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var movieId: Int = 0
+    var movieImages: [MovieImages] = []
+
+    @IBOutlet var photoDetailCollectionView: UICollectionView!
 
     @IBOutlet var textView: UITextView!
     @IBOutlet var movieTitle: UILabel!
@@ -31,6 +34,28 @@ class MovieDetailViewController: UIViewController {
             showButton.setTitle("Show More", for: .normal)
             sender.tag = 0
         }
+    }
+
+    func fetchImages() {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/images?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
+
+            guard let data = data, error == nil else {
+                return
+            }
+            var result: MovieImagesResponse?
+            do {
+                result = try JSONDecoder().decode(MovieImagesResponse.self, from: data)
+            } catch {
+                print(error)
+            }
+
+            guard let finalResult = result?.backdrops else { return }
+
+            DispatchQueue.main.async {
+                self.movieImages = finalResult
+                self.photoDetailCollectionView.reloadData()
+            }
+        }).resume()
     }
 
     func fetchMovieDetail() {
@@ -70,7 +95,10 @@ class MovieDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoDetailCollectionView.dataSource = self
+        photoDetailCollectionView.delegate = self
         fetchMovieDetail()
+        fetchImages()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -79,5 +107,17 @@ class MovieDetailViewController: UIViewController {
         {
             destinationVC.movieId = movieId
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movieImages.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let photo = movieImages[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoDetailCell", for: indexPath) as! PhotoDetailCollectionViewCell
+
+        cell.configure(photo)
+        return cell
     }
 }
