@@ -14,6 +14,9 @@ class CastCrewTableViewCell: UITableViewCell {
     @IBOutlet var charName: UILabel!
 
     func configure(_ castAndCrew: CastAndCrew) {
+        realName.text = castAndCrew.name
+        charName.text = castAndCrew.character ?? castAndCrew.job
+        
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
         profileImageView.kf.indicatorType = .activity
