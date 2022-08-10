@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-class CastCrewTableViewController: UITableViewController {
+class CastAndCrewTableViewController: UITableViewController {
     var viewModel: CastAndCrewViewModel!
 
     private let apiManager = APIManager()
@@ -59,7 +59,7 @@ class CastCrewTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let castAndCrew = data[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastCrewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "castCell", for: indexPath) as! CastAndCrewTableViewCell
 
         cell.configure(castAndCrew)
 

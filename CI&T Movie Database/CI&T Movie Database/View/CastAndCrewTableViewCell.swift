@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CastCrewTableViewCell: UITableViewCell {
+class CastAndCrewTableViewCell: UITableViewCell {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var realName: UILabel!
     @IBOutlet var threeDotsImageView: UIImageView!

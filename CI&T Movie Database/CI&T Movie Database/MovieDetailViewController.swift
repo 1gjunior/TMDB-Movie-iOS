@@ -102,7 +102,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if let castAndCrewVC = segue.destination as? CastCrewTableViewController,
+        if let castAndCrewVC = segue.destination as? CastAndCrewTableViewController,
            segue.identifier == "castAndCrewSegue" || segue.identifier == "castAndCrewButtonSegue"
         {
             castAndCrewVC.movieId = movieId

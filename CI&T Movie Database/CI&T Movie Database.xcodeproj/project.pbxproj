@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */; };
-		294CB197288ED4BD008DD76B /* CastCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */; };
-		294CB199288EDF0E008DD76B /* CastCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */; };
+		294CB197288ED4BD008DD76B /* CastAndCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */; };
+		294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */; };
 		294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19A288F1FA2008DD76B /* HomeViewController.swift */; };
 		294CB19D288F383A008DD76B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */; };
 		29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29590D3A2888D36E00E351F4 /* PhotoViewController.swift */; };
@@ -48,8 +48,8 @@
 
 /* Begin PBXFileReference section */
 		292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
-		294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewTableViewController.swift; sourceTree = "<group>"; };
-		294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewTableViewCell.swift; sourceTree = "<group>"; };
+		294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewController.swift; sourceTree = "<group>"; };
+		294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewCell.swift; sourceTree = "<group>"; };
 		294CB19A288F1FA2008DD76B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		29590D3A2888D36E00E351F4 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		29B8F9EA28A33CC2001A8199 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				294CB196288ED4BD008DD76B /* CastCrewTableViewController.swift */,
+				294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 		29B8F9EB28A33D05001A8199 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				294CB198288EDF0E008DD76B /* CastCrewTableViewCell.swift */,
+				294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,12 +393,12 @@
 				299BBA2D287DCFDF00ADE88D /* SceneDelegate.swift in Sources */,
 				29B8F9E328A32287001A8199 /* APIManagerService.swift in Sources */,
 				292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */,
-				294CB199288EDF0E008DD76B /* CastCrewTableViewCell.swift in Sources */,
+				294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */,
 				29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */,
 				294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */,
 				29F7698B28A414C000D6D348 /* CastAndCrewRepository.swift in Sources */,
 				29B8F9E528A32532001A8199 /* CastAndCrewViewModel.swift in Sources */,
-				294CB197288ED4BD008DD76B /* CastCrewTableViewController.swift in Sources */,
+				294CB197288ED4BD008DD76B /* CastAndCrewTableViewController.swift in Sources */,
 				299BBA42287DD18B00ADE88D /* Movie.swift in Sources */,
 				294CB19D288F383A008DD76B /* HomeCollectionViewCell.swift in Sources */,
 			);
