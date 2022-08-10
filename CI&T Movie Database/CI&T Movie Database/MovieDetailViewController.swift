@@ -10,6 +10,7 @@ import Kingfisher
 import UIKit
 
 class MovieDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    var movieDetailViewModel: MovieDetailViewModel!
     var photoViewModel: PhotoViewModel!
 
     private var subscribers: Set<AnyCancellable> = []
@@ -41,53 +42,25 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
 
-    func fetchMovieDetail() {
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-
-            guard let data = data, error == nil else {
-                return
-            }
-            var result: MovieDetail?
-            do {
-                result = try JSONDecoder().decode(MovieDetail.self, from: data)
-            } catch {
-                print(error)
-            }
-
-            guard let finalResult = result else { return }
-            DispatchQueue.main.async {
-                self.textView.text = finalResult.overview
-                self.movieTitle.text = finalResult.title
-                self.movieVoteAverage.text = String(format: "%.1f", finalResult.voteAverage)
-                self.movieImageView.kf.indicatorType = .activity
-                self.movieImageView.kf.setImage(with: finalResult.backdropURL)
-                self.movieDuration.text = finalResult.duration
-                self.movieIsAdult.text = finalResult.adult ? "R" : ""
-
-                var genreNames: [String] = []
-
-                for genre in finalResult.genres! {
-                    genreNames.append(genre.name)
-                }
-
-                self.movieGenres.text = genreNames.joined(separator: ", ")
-            }
-
-        }).resume()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewModel()
-        observeViewModel()
-        getPhotosBy(movieId: movieId)
         photoDetailCollectionView.dataSource = self
         photoDetailCollectionView.delegate = self
-        fetchMovieDetail()
+        setupViewModel()
+        observeViewModel()
+        getMovieDetailBy(movieId: movieId)
+        getPhotosBy(movieId: movieId)
     }
 
+    // MARK: - Private Methods
+
     private func setupViewModel() {
+        movieDetailViewModel = MovieDetailViewModel()
         photoViewModel = PhotoViewModel()
+    }
+
+    private func getMovieDetailBy(movieId: Int) {
+        movieDetailViewModel.getMovieDetailBy(movieId: movieId)
     }
 
     private func getPhotosBy(movieId: Int) {
@@ -107,6 +80,32 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
                 self.photoDetailCollectionView.reloadData()
             }
         }.store(in: &subscribers)
+
+        movieDetailViewModel.movieDetailSubject.sink { resultCompletion in
+            switch resultCompletion {
+            case let .failure(error):
+                print(error.localizedDescription)
+            default: break
+            }
+        } receiveValue: { movieDetail in
+            DispatchQueue.main.async {
+                self.textView.text = movieDetail.overview
+                self.movieTitle.text = movieDetail.title
+                self.movieVoteAverage.text = String(format: "%.1f", movieDetail.voteAverage)
+                self.movieImageView.kf.indicatorType = .activity
+                self.movieImageView.kf.setImage(with: movieDetail.backdropURL)
+                self.movieDuration.text = movieDetail.duration
+                self.movieIsAdult.text = movieDetail.adult ? "R" : ""
+
+                var genreNames: [String] = []
+
+                for genre in movieDetail.genres! {
+                    genreNames.append(genre.name)
+                }
+
+                self.movieGenres.text = genreNames.joined(separator: ", ")
+            }
+        }.store(in: &subscribers)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -119,6 +118,8 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
             photoVC.movieImages = movieImages
         }
     }
+
+    // MARK: - Data Source
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieImages.count
