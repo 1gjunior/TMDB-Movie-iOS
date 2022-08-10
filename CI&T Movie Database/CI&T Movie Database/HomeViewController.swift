@@ -5,75 +5,23 @@
 //  Created by Gilberto Junior on 25/07/22.
 //
 
+import Combine
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    var nowPlayingMovies: [Movie] = []
+    var comingSoonMoves: [Movie] = []
+    var data: [Movie] = []
+    var genres: [MovieGenre] = []
+    var movieId: Int = 0
+
+    private var viewModel: MovieListViewModel!
+    private var subscribers: Set<AnyCancellable> = []
+
     @IBOutlet var movieSegmentedControl: UISegmentedControl! {
         didSet {
             movieSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         }
-    }
-
-    func fetchGenres() {
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-
-            guard let data = data, error == nil else {
-                return
-            }
-            var result: MoviesGenreResponse?
-            do {
-                result = try JSONDecoder().decode(MoviesGenreResponse.self, from: data)
-            } catch {
-                print(error)
-            }
-
-            guard let finalResult = result?.genres else { return }
-            self.genres.append(contentsOf: finalResult)
-
-        }).resume()
-    }
-
-    func fetchMovies() {
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-
-            guard let data = data, error == nil else {
-                return
-            }
-            var result: MoviesResponse?
-            do {
-                result = try JSONDecoder().decode(MoviesResponse.self, from: data)
-            } catch {
-                print(error)
-            }
-
-            guard let finalResult = result?.results else { return }
-
-            DispatchQueue.main.async {
-                self.data = finalResult
-                self.nowPlayingMovies = finalResult
-                self.collectionView.reloadData()
-            }
-        }).resume()
-
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-
-            guard let data = data, error == nil else {
-                return
-            }
-            var result: MoviesResponse?
-            do {
-                result = try JSONDecoder().decode(MoviesResponse.self, from: data)
-            } catch {
-                print(error)
-            }
-
-            guard let finalResult = result?.results else { return }
-
-            DispatchQueue.main.async {
-                self.comingSoonMoves = finalResult
-                self.collectionView.reloadData()
-            }
-        }).resume()
     }
 
     @IBAction func segmentedDidChange(_: UISegmentedControl) {
@@ -88,22 +36,59 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet var collectionView: UICollectionView!
 
-    lazy var nowPlayingMovies: [Movie] = []
-    lazy var comingSoonMoves: [Movie] = []
-    lazy var data: [Movie] = []
-    lazy var genres: [MovieGenre] = []
-    var movieId: Int = 0
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
 
+        setupViewModel()
+        observeViewModel()
+        getNowPlayingMovies()
+        getUpcomingMovies()
         collectionView.dataSource = self
         collectionView.delegate = self
-        fetchGenres()
-        fetchMovies()
+    }
+
+    private func setupViewModel() {
+        viewModel = MovieListViewModel()
+    }
+
+    private func getNowPlayingMovies() {
+        viewModel.getNowPlayingMovies()
+    }
+
+    private func getUpcomingMovies() {
+        viewModel.getUpcomingMovies()
+    }
+
+    private func observeViewModel() {
+        viewModel.nowPlayingMoviesSubject.sink { resultCompletion in
+            switch resultCompletion {
+            case .failure(let error):
+                print(error.localizedDescription)
+            default: break
+            }
+        } receiveValue: { nowPlayingMovies in
+            DispatchQueue.main.async {
+                self.data = nowPlayingMovies
+                self.nowPlayingMovies = nowPlayingMovies
+                self.collectionView.reloadData()
+            }
+        }.store(in: &subscribers)
+
+        viewModel.upcomingMoviesSubject.sink { resultCompletion in
+            switch resultCompletion {
+            case .failure(let error):
+                print(error.localizedDescription)
+            default: break
+            }
+        } receiveValue: { upcomingMovies in
+            DispatchQueue.main.async {
+                self.comingSoonMoves = upcomingMovies
+                self.collectionView.reloadData()
+            }
+        }.store(in: &subscribers)
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -127,9 +112,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let movie = data[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
 
-        let movieGenre = genres.filter { $0.id == movie.genreIds.first }
+//        let movieGenre = genres.filter { $0.id == movie.genreIds.first }
 
-        cell.genreLabel.text = movieGenre.first?.name
+//        print(movie.genres)
+
+//        cell.genreLabel.text = movie.genres?.first?.name
         cell.configure(movie)
         return cell
     }

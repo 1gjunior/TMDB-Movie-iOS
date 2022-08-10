@@ -21,6 +21,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         titleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
         voteAverageLabel.text = String(format: "%.1f", movie.voteAverage)
+        genreLabel.text = movie.genres?.first?.name
         movieImageView.kf.indicatorType = .activity
         movieImageView.kf.setImage(with: movie.posterURL)
     }

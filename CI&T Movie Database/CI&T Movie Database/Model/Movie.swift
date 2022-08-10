@@ -41,7 +41,7 @@ struct Movie: Codable {
     let voteAverage: Double
     let voteCount: Int
     let tagline: String?
-    let genres: [MovieGenre]?
+    var genres: [MovieGenre]?
     let genreIds: [Int]
     var posterURL: URL {
         return URL(string: "https://image.tmdb.org/t/p/w154\(posterPath ?? "")")!
