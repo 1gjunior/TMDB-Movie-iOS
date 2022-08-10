@@ -9,9 +9,9 @@ import Combine
 import UIKit
 
 class CastCrewTableViewController: UITableViewController {
-    var viewModel: CastCrewViewModel!
+    var viewModel: CastAndCrewViewModel!
 
-    private let apiManager = APIManagerService()
+    private let apiManager = APIManager()
     private var subscriber: AnyCancellable?
 
     var data: [CastAndCrew] = []
@@ -19,50 +19,21 @@ class CastCrewTableViewController: UITableViewController {
 
     @IBOutlet var table: UITableView!
 
-// TODO: - Remove this method
-//    func fetchCastAndCrew() {
-//        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-//
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            var result: MovieCastAndCrewResponse?
-//            do {
-//                result = try JSONDecoder().decode(MovieCastAndCrewResponse.self, from: data)
-//            } catch {
-//                print(error)
-//            }
-//
-//            guard let finalResult = result else { return }
-//
-//            DispatchQueue.main.async {
-//                self.data = finalResult.cast
-//                self.data += finalResult.crew
-//                self.tableView.reloadData()
-//            }
-//
-//        }).resume()
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-// TODO: - should remove this lines?
-//        table.dataSource = self
-//        table.delegate = self
         setupViewModel()
-        fetchCastAndCrew()
         observeViewModel()
+        getCastAndCrewBy(movieId: movieId)
     }
 
-// MARK: - Private Methods
-    
+    // MARK: - Private Methods
+
     private func setupViewModel() {
-        viewModel = CastCrewViewModel(apiManager: apiManager, endpoint: .castAndCrewFetch)
+        viewModel = CastAndCrewViewModel()
     }
 
-    private func fetchCastAndCrew() {
-        viewModel.fetchCastAndCrew()
+    private func getCastAndCrewBy(movieId: Int) {
+        viewModel.getCastAndCrewBy(movieId: movieId)
     }
 
     private func observeViewModel() {
@@ -80,8 +51,8 @@ class CastCrewTableViewController: UITableViewController {
         }
     }
 
-// MARK: - Data Source
-    
+    // MARK: - Data Source
+
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return data.count
     }

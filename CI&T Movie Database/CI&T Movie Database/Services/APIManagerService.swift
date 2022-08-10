@@ -8,7 +8,11 @@
 import Combine
 import Foundation
 
-class APIManagerService {
+protocol APIManagerService {
+    func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+class APIManager: APIManagerService {
     
     public let apiBaseURL = "https://api.themoviedb.org/3/movie"
     public let apiKey = "a5a29cab08554d8a0b331b250a19170b"
