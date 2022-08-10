@@ -61,6 +61,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Akb-fO-ET2" id="hTx-bp-Q3U"/>
+                                    <outlet property="delegate" destination="Akb-fO-ET2" id="FVt-ho-aFy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rz1-er-KjH"/>

@@ -5,10 +5,15 @@
 //  Created by Gilberto Junior on 26/07/22.
 //
 
+import Combine
 import Kingfisher
 import UIKit
 
 class MovieDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    var photoViewModel: PhotoViewModel!
+
+    private var subscribers: Set<AnyCancellable> = []
+
     var movieId: Int = 0
     var movieImages: [MovieImages] = []
 
@@ -34,28 +39,6 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
             showButton.setTitle("Show More", for: .normal)
             sender.tag = 0
         }
-    }
-
-    func fetchImages() {
-        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/images?api_key=a5a29cab08554d8a0b331b250a19170b")!, completionHandler: { data, _, error in
-
-            guard let data = data, error == nil else {
-                return
-            }
-            var result: MovieImagesResponse?
-            do {
-                result = try JSONDecoder().decode(MovieImagesResponse.self, from: data)
-            } catch {
-                print(error)
-            }
-
-            guard let finalResult = result?.backdrops else { return }
-
-            DispatchQueue.main.async {
-                self.movieImages = finalResult
-                self.photoDetailCollectionView.reloadData()
-            }
-        }).resume()
     }
 
     func fetchMovieDetail() {
@@ -95,10 +78,35 @@ class MovieDetailViewController: UIViewController, UICollectionViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModel()
+        observeViewModel()
+        getPhotosBy(movieId: movieId)
         photoDetailCollectionView.dataSource = self
         photoDetailCollectionView.delegate = self
         fetchMovieDetail()
-        fetchImages()
+    }
+
+    private func setupViewModel() {
+        photoViewModel = PhotoViewModel()
+    }
+
+    private func getPhotosBy(movieId: Int) {
+        photoViewModel.getPhotosBy(movieId: movieId)
+    }
+
+    private func observeViewModel() {
+        photoViewModel.photoSubject.sink { resultCompletion in
+            switch resultCompletion {
+            case let .failure(error):
+                print(error.localizedDescription)
+            default: break
+            }
+        } receiveValue: { photos in
+            DispatchQueue.main.async {
+                self.movieImages = photos
+                self.photoDetailCollectionView.reloadData()
+            }
+        }.store(in: &subscribers)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {

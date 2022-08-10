@@ -14,9 +14,9 @@ class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.dataSource = self
-        table.delegate = self
     }
+
+    // MARK: - Data Source
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return movieImages.count

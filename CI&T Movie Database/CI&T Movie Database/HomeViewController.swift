@@ -127,10 +127,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let movie = data[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
 
-        cell.titleLabel.text = movie.title
-        cell.releaseDateLabel.text = movie.releaseDate
-        cell.voteAverageLabel.text = String(format: "%.1f", movie.voteAverage)
-
         let movieGenre = genres.filter { $0.id == movie.genreIds.first }
 
         cell.genreLabel.text = movieGenre.first?.name
