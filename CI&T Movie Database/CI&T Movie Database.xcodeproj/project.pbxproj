@@ -182,7 +182,6 @@
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
 				299BBA3E287DD14D00ADE88D /* Model */,
-				292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */,
 				29B8F9E628A3277A001A8199 /* Network */,
 				29F7698928A414A000D6D348 /* Repository */,
 				299BBA2C287DCFDF00ADE88D /* SceneDelegate.swift */,
@@ -231,6 +230,7 @@
 		29B8F9EA28A33CC2001A8199 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */,
 				29590D3A2888D36E00E351F4 /* PhotoViewController.swift */,
 				294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */,
 			);
