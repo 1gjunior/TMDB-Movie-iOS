@@ -20,8 +20,8 @@ class MovieListRepository: MovieListRepositoryProtocol {
     }
 
     func getNowPlayingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a5a29cab08554d8a0b331b250a19170b")!
-        
+        guard let url = TMDBAPIService.getNowPlayingURLString() else { return }
+
         apiManager.fetchItems(url: url) { (result: Result<MoviesResponse, Error>) in
             switch result {
             case .success(let data):
@@ -31,10 +31,10 @@ class MovieListRepository: MovieListRepositoryProtocol {
             }
         }
     }
-    
+
     func getUpcomingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=a5a29cab08554d8a0b331b250a19170b")!
-        
+        guard let url = TMDBAPIService.getUpcomingURLString() else { return }
+
         apiManager.fetchItems(url: url) { (result: Result<MoviesResponse, Error>) in
             switch result {
             case .success(let data):

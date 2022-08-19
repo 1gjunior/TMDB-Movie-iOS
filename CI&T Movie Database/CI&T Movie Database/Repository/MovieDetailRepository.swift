@@ -19,7 +19,7 @@ class MovieDetailRepository: MovieDetailRepositoryProtocol {
     }
 
     func getMovieDetailsBy(movieId: Int, completion: @escaping (Result<MovieDetail, Error>) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieId)?api_key=a5a29cab08554d8a0b331b250a19170b")!
+        guard let url = TMDBAPIService.getMovieDetailsURLString(id: movieId) else { return }
 
         apiManager.fetchItems(url: url) { (result: Result<MovieDetail, Error>) in
             switch result {

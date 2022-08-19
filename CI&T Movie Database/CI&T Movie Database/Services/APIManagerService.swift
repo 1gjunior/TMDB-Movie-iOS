@@ -13,10 +13,6 @@ protocol APIManagerService {
 }
 
 class APIManager: APIManagerService {
-    
-    public let apiBaseURL = "https://api.themoviedb.org/3/movie"
-    public let apiKey = "a5a29cab08554d8a0b331b250a19170b"
-    
     private var subscribers = Set<AnyCancellable>()
 
     func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {

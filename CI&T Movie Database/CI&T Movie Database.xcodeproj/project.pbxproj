@@ -50,6 +50,7 @@
 		29F7699728A445D700D6D348 /* MovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7699628A445D700D6D348 /* MovieListRepository.swift */; };
 		29F7699928A447C200D6D348 /* MoviListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7699828A447C200D6D348 /* MoviListViewModel.swift */; };
 		29F7699B28A44B8800D6D348 /* GenresRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7699A28A44B8800D6D348 /* GenresRepository.swift */; };
+		29F9CB1428B032840034E5F2 /* TMDBAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9CB1328B032840034E5F2 /* TMDBAPIService.swift */; };
 		2FCD81763BAF519AEA34FB74 /* Pods_CI_T_Movie_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A61851E1101F994A0945CE /* Pods_CI_T_Movie_Database.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		29F7699628A445D700D6D348 /* MovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepository.swift; sourceTree = "<group>"; };
 		29F7699828A447C200D6D348 /* MoviListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviListViewModel.swift; sourceTree = "<group>"; };
 		29F7699A28A44B8800D6D348 /* GenresRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresRepository.swift; sourceTree = "<group>"; };
+		29F9CB1328B032840034E5F2 /* TMDBAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIService.swift; sourceTree = "<group>"; };
 		7FB11A056EAB5BEA2B217FCC /* Pods-CI&T Movie Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CI&T Movie Database.release.xcconfig"; path = "Target Support Files/Pods-CI&T Movie Database/Pods-CI&T Movie Database.release.xcconfig"; sourceTree = "<group>"; };
 		B4E3C60AC5108552F3E106EC /* Pods-CI&T Movie Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CI&T Movie Database.debug.xcconfig"; path = "Target Support Files/Pods-CI&T Movie Database/Pods-CI&T Movie Database.debug.xcconfig"; sourceTree = "<group>"; };
 		D5A61851E1101F994A0945CE /* Pods_CI_T_Movie_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CI_T_Movie_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,8 +184,6 @@
 				299BBA2A287DCFDF00ADE88D /* AppDelegate.swift */,
 				299BBA33287DCFE100ADE88D /* Assets.xcassets */,
 				29590D642888E87600E351F4 /* Fonts */,
-				294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */,
-				294CB19A288F1FA2008DD76B /* HomeViewController.swift */,
 				299BBA38287DCFE100ADE88D /* Info.plist */,
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
@@ -211,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				29B8F9E228A32287001A8199 /* APIManagerService.swift */,
+				29F9CB1328B032840034E5F2 /* TMDBAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +238,7 @@
 		29B8F9EA28A33CC2001A8199 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				294CB19A288F1FA2008DD76B /* HomeViewController.swift */,
 				292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */,
 				29590D3A2888D36E00E351F4 /* PhotoViewController.swift */,
 				294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */,
@@ -247,6 +249,7 @@
 		29B8F9EB28A33D05001A8199 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				294CB19C288F383A008DD76B /* HomeCollectionViewCell.swift */,
 				29A1F16A289B224100AB469F /* PhotoDetailCollectionViewCell.swift */,
 				29590D3C2888D5EE00E351F4 /* PhotoTableViewCell.swift */,
 				294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */,
@@ -417,6 +420,7 @@
 				29F7699B28A44B8800D6D348 /* GenresRepository.swift in Sources */,
 				29B8F9E328A32287001A8199 /* APIManagerService.swift in Sources */,
 				29F7698F28A4297500D6D348 /* PhotoViewModel.swift in Sources */,
+				29F9CB1428B032840034E5F2 /* TMDBAPIService.swift in Sources */,
 				292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */,
 				294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */,
 				29590D3B2888D36E00E351F4 /* PhotoViewController.swift in Sources */,

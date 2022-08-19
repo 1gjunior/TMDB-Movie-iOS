@@ -19,7 +19,7 @@ class GenresRepository: GenresRepositoryProtocol {
     }
 
     func getGenres(completion: @escaping (Result<[MovieGenre], Error>) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=a5a29cab08554d8a0b331b250a19170b")!
+        guard let url = TMDBAPIService.getGenresURLString() else { return }
 
         apiManager.fetchItems(url: url) { (result: Result<MoviesGenreResponse, Error>) in
             switch result {

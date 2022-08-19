@@ -19,7 +19,7 @@ class CastAndCrewRepository: CastAndCrewRepositoryProtocol {
     }
 
     func getCastAndCrewBy(movieId: Int, completion: @escaping (Result<[CastAndCrew], Error>) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=a5a29cab08554d8a0b331b250a19170b")!
+        guard let url = TMDBAPIService.getCastAndCrewURLString(id: movieId) else { return }
 
         apiManager.fetchItems(url: url) { (result: Result<MovieCastAndCrewResponse, Error>) in
             switch result {
