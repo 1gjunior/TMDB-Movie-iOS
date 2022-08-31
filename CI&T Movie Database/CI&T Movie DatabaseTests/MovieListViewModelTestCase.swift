@@ -11,12 +11,13 @@ import XCTest
 
 class MovieListViewModelTestCase: XCTestCase {
     var viewModel: MovieListViewModel!
-    var mock = MovieListRepositoryProtocolMock()
+    var movieListMock = MovieListRepositoryProtocolMock()
+    var genresMock = GenresRepositoryProtocolMock()
     var cancellables: Set<AnyCancellable>!
     
     override func setUp() async throws {
         cancellables = []
-        viewModel = MovieListViewModel(movieListRepository: mock)
+        viewModel = MovieListViewModel(movieListRepository: movieListMock, genresRepository: genresMock)
     }
     
     override func tearDown() async throws {
@@ -26,7 +27,7 @@ class MovieListViewModelTestCase: XCTestCase {
     func test_now_playing_error() {
         // MARK: - Given
         
-        mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
+        movieListMock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
         
         // MARK: Then
         
@@ -39,7 +40,8 @@ class MovieListViewModelTestCase: XCTestCase {
         // MARK: When
 
         viewModel.getNowPlayingMovies()
-        XCTAssertEqual(mock.getNowPlayingMoviesCallCount, 1)
+        XCTAssertEqual(movieListMock.getNowPlayingMoviesCallCount, 1)
+        XCTAssertEqual(genresMock.getGenresCallCount, 1)
     }
     
     func test_now_playing_success() {
@@ -47,7 +49,7 @@ class MovieListViewModelTestCase: XCTestCase {
         
         let data = [Movie(id: 539681, title: "Dragon Ball Super: Super Hero", backdropPath: "/xfNHRI2f5kHGvogxLd0C5sB90L7.jpg", posterPath: "/r7XifzvtezNt31ypvsmb6Oqxw49.jpg", overview: "a simple movie", releaseDate: "2022-06-11", voteAverage: 7.1, voteCount: 785, tagline: nil, genreIds: [16, 878, 28])]
         
-        mock.model = data
+        movieListMock.model = data
         
         // MARK: - Then
 
@@ -60,13 +62,14 @@ class MovieListViewModelTestCase: XCTestCase {
         // MARK: - When
 
         viewModel.getNowPlayingMovies()
-        XCTAssertEqual(mock.getNowPlayingMoviesCallCount, 1)
+        XCTAssertEqual(movieListMock.getNowPlayingMoviesCallCount, 1)
+        XCTAssertEqual(genresMock.getGenresCallCount, 1)
     }
 
     func test_upcoming_error() {
         // MARK: - Given
         
-        mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
+        movieListMock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
         
         // MARK: Then
         
@@ -79,7 +82,8 @@ class MovieListViewModelTestCase: XCTestCase {
         // MARK: When
 
         viewModel.getUpcomingMovies()
-        XCTAssertEqual(mock.getUpcomingMoviesCallCount, 1)
+        XCTAssertEqual(movieListMock.getUpcomingMoviesCallCount, 1)
+        XCTAssertEqual(genresMock.getGenresCallCount, 1)
     }
     
     func test_upcoming_success() {
@@ -87,7 +91,7 @@ class MovieListViewModelTestCase: XCTestCase {
         
         let data = [Movie(id: 539681, title: "Dragon Ball Super: Super Hero", backdropPath: "/xfNHRI2f5kHGvogxLd0C5sB90L7.jpg", posterPath: "/r7XifzvtezNt31ypvsmb6Oqxw49.jpg", overview: "a simple movie", releaseDate: "2022-06-11", voteAverage: 7.1, voteCount: 785, tagline: nil, genreIds: [16, 878, 28])]
         
-        mock.model = data
+        movieListMock.model = data
         
         // MARK: - Then
 
@@ -100,6 +104,7 @@ class MovieListViewModelTestCase: XCTestCase {
         // MARK: - When
 
         viewModel.getUpcomingMovies()
-        XCTAssertEqual(mock.getUpcomingMoviesCallCount, 1)
+        XCTAssertEqual(movieListMock.getUpcomingMoviesCallCount, 1)
+        XCTAssertEqual(genresMock.getGenresCallCount, 1)
     }
 }
