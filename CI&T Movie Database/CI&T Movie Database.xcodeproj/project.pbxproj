@@ -18,6 +18,7 @@
 		293C474428BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C474328BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift */; };
 		293C474628BFECE100E73FA7 /* MovieListRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C474528BFECE100E73FA7 /* MovieListRepositoryProtocolMock.swift */; };
 		293C474828BFED9900E73FA7 /* MovieListViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C474728BFED9900E73FA7 /* MovieListViewModelTestCase.swift */; };
+		293C474A28C00B2400E73FA7 /* APIManagerServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C474928C00B2400E73FA7 /* APIManagerServiceMock.swift */; };
 		294CB197288ED4BD008DD76B /* CastAndCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */; };
 		294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */; };
 		294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19A288F1FA2008DD76B /* HomeViewController.swift */; };
@@ -86,6 +87,7 @@
 		293C474328BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelTestCase.swift; sourceTree = "<group>"; };
 		293C474528BFECE100E73FA7 /* MovieListRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepositoryProtocolMock.swift; sourceTree = "<group>"; };
 		293C474728BFED9900E73FA7 /* MovieListViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTestCase.swift; sourceTree = "<group>"; };
+		293C474928C00B2400E73FA7 /* APIManagerServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerServiceMock.swift; sourceTree = "<group>"; };
 		294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewController.swift; sourceTree = "<group>"; };
 		294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewCell.swift; sourceTree = "<group>"; };
 		294CB19A288F1FA2008DD76B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				293C473F28BFE7C200E73FA7 /* GenresRepositoryProtocolMock.swift */,
 				293C474128BFE8B900E73FA7 /* MovieDetailRepositoryProtocolMock.swift */,
 				293C474528BFECE100E73FA7 /* MovieListRepositoryProtocolMock.swift */,
+				293C474928C00B2400E73FA7 /* APIManagerServiceMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			files = (
 				293C474628BFECE100E73FA7 /* MovieListRepositoryProtocolMock.swift in Sources */,
 				293C473E28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift in Sources */,
+				293C474A28C00B2400E73FA7 /* APIManagerServiceMock.swift in Sources */,
 				293C474828BFED9900E73FA7 /* MovieListViewModelTestCase.swift in Sources */,
 				293C474428BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift in Sources */,
 				293C474228BFE8B900E73FA7 /* MovieDetailRepositoryProtocolMock.swift in Sources */,

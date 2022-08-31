@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+/// @mockable
 protocol APIManagerService {
     func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void)
 }
