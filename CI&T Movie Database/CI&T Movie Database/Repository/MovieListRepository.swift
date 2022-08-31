@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol MovieListRepositoryProtocol {
     func getNowPlayingMovies(completion: @escaping (Result<[Movie], Error>) -> Void)
     func getUpcomingMovies(completion: @escaping (Result<[Movie], Error>) -> Void)

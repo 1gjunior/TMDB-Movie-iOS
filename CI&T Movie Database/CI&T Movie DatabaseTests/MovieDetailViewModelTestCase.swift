@@ -33,7 +33,7 @@ class MovieDetailViewModelTestCase: XCTestCase {
         viewModel.movieDetailSubject.sink(receiveCompletion: { result in
             XCTAssertNotNil(result)
         }, receiveValue: { _ in
-            XCTFail("Error test_error PhotoViewModelTestCase")
+            XCTFail("Error test_error MovieDetailViewModelTestCase")
         }).store(in: &cancellables)
 
         // MARK: - When
@@ -51,7 +51,7 @@ class MovieDetailViewModelTestCase: XCTestCase {
         // MARK: - Then
 
         viewModel.movieDetailSubject.sink(receiveCompletion: { _ in
-            XCTFail("Error test_success PhotoViewModelTestCase")
+            XCTFail("Error test_success MovieDetailViewModelTestCase")
         }, receiveValue: { result in
             XCTAssertEqual(result.overview, "a simple movie")
         }).store(in: &cancellables)
