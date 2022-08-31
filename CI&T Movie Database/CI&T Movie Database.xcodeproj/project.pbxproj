@@ -10,6 +10,7 @@
 		290CB9D228BFC1A900CB49C8 /* PhotoViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */; };
 		290CB9D428BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */; };
 		292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */; };
+		293C473A28BFE05D00E73FA7 /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C473928BFE05D00E73FA7 /* App+Injection.swift */; };
 		294CB197288ED4BD008DD76B /* CastAndCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */; };
 		294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */; };
 		294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19A288F1FA2008DD76B /* HomeViewController.swift */; };
@@ -70,6 +71,7 @@
 		290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTestCase.swift; sourceTree = "<group>"; };
 		290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryProtocolMock.swift; sourceTree = "<group>"; };
 		292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		293C473928BFE05D00E73FA7 /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
 		294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewController.swift; sourceTree = "<group>"; };
 		294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewCell.swift; sourceTree = "<group>"; };
 		294CB19A288F1FA2008DD76B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		293C473828BFE04700E73FA7 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				293C473928BFE05D00E73FA7 /* App+Injection.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
 		29590D642888E87600E351F4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 				299BBA33287DCFE100ADE88D /* Assets.xcassets */,
 				29590D642888E87600E351F4 /* Fonts */,
 				299BBA38287DCFE100ADE88D /* Info.plist */,
+				293C473828BFE04700E73FA7 /* Injection */,
 				299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */,
 				299BBA30287DCFDF00ADE88D /* Main.storyboard */,
 				299BBA3E287DD14D00ADE88D /* Model */,
@@ -479,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293C473A28BFE05D00E73FA7 /* App+Injection.swift in Sources */,
 				29F7699328A43C2C00D6D348 /* MovieDetailViewModel.swift in Sources */,
 				29A1F16B289B224100AB469F /* PhotoDetailCollectionViewCell.swift in Sources */,
 				29590D3D2888D5EE00E351F4 /* PhotoTableViewCell.swift in Sources */,

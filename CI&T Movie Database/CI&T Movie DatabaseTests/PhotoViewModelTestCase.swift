@@ -10,12 +10,17 @@ import Combine
 import XCTest
 
 class PhotoViewModelTestCase: XCTestCase {
-    var viewModel = PhotoViewModel()
+    var viewModel: PhotoViewModel!
     var mockPhotoRepository = PhotoRepositoryProtocolMock()
-    var cancellables = Set<AnyCancellable>()
+    var cancellables: Set<AnyCancellable>!
 
-    override func setUp() {
-        viewModel = .init(photoRepository: mockPhotoRepository)
+    override func setUp() async throws {
+        cancellables = []
+        viewModel = PhotoViewModel(photoRepository: mockPhotoRepository)
+    }
+
+    override func tearDown() async throws {
+        viewModel = nil
     }
 
     func test_error() {
