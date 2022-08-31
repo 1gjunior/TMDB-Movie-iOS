@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol CastAndCrewRepositoryProtocol {
     func getCastAndCrewBy(movieId: Int, completion: @escaping (Result<[CastAndCrew], Error>) -> Void)
 }
