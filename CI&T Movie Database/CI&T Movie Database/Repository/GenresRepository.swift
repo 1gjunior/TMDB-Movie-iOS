@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol GenresRepositoryProtocol {
     func getGenres(completion: @escaping (Result<[MovieGenre], Error>) -> Void)
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol MovieDetailRepositoryProtocol {
     func getMovieDetailsBy(movieId: Int, completion: @escaping (Result<MovieDetail, Error>) -> Void)
 }
