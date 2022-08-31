@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// @mockable
 protocol PhotoRepositoryProtocol {
     func getPhotosBy(movieId: Int, completion: @escaping (Result<[MovieImages], Error>) -> Void)
 }
