@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		290CB9CB28BFBF5600CB49C8 /* CI_T_Movie_DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9CA28BFBF5600CB49C8 /* CI_T_Movie_DatabaseTests.swift */; };
 		290CB9D228BFC1A900CB49C8 /* PhotoViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */; };
 		290CB9D428BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */; };
 		292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */; };
@@ -68,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		290CB9C828BFBF5600CB49C8 /* CI&T Movie DatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI&T Movie DatabaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		290CB9CA28BFBF5600CB49C8 /* CI_T_Movie_DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_T_Movie_DatabaseTests.swift; sourceTree = "<group>"; };
 		290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTestCase.swift; sourceTree = "<group>"; };
 		290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryProtocolMock.swift; sourceTree = "<group>"; };
 		292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -152,11 +150,18 @@
 		290CB9C928BFBF5600CB49C8 /* CI&T Movie DatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				290CB9CA28BFBF5600CB49C8 /* CI_T_Movie_DatabaseTests.swift */,
+				293C473728BFE00600E73FA7 /* Mock */,
 				290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */,
-				290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */,
 			);
 			path = "CI&T Movie DatabaseTests";
+			sourceTree = "<group>";
+		};
+		293C473728BFE00600E73FA7 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		29590D642888E87600E351F4 /* Fonts */ = {
@@ -465,7 +470,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290CB9CB28BFBF5600CB49C8 /* CI_T_Movie_DatabaseTests.swift in Sources */,
 				290CB9D228BFC1A900CB49C8 /* PhotoViewModelTestCase.swift in Sources */,
 				290CB9D428BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift in Sources */,
 			);
