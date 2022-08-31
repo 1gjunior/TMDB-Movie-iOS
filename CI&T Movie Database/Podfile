@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'CI&T Movie Database' do
   pod 'Kingfisher', '~> 7.0'
+  pod "Resolver"
 end

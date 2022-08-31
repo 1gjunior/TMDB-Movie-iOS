@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-CI&T Movie Database/Pods-CI&T Movie Database-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework
