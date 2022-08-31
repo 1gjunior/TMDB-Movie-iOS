@@ -5,31 +5,61 @@
 //  Created by Gilberto Junior on 31/08/22.
 //
 
+@testable import CI_T_Movie_Database
+import Combine
 import XCTest
 
 class CastAndCrewViewModelTestCase: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var viewModel: CastAndCrewViewModel!
+    var mock = CastAndCrewRepositoryProtocolMock()
+    var cancellables: Set<AnyCancellable>!
+    
+    override func setUp() async throws {
+        cancellables = []
+        viewModel = CastAndCrewViewModel(castAndCrewRepository: mock)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() async throws {
+        viewModel = nil
     }
+    
+    func test_error() {
+        // MARK: - Given
+        
+        mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
+        
+        // MARK: Then
+        
+        viewModel.castAndCrewSubject.sink(receiveCompletion: { result in
+            XCTAssertNotNil(result)
+        }, receiveValue: { _ in
+            XCTFail("Error test_error CastAndCrewViewModelTestCase")
+        }).store(in: &cancellables)
+        
+        // MARK: When
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        viewModel.getCastAndCrewBy(movieId: 182)
+        XCTAssertEqual(mock.getCastAndCrewByCallCount, 1)
     }
+    
+    func test_success() {
+        // MARK: - Given
+        
+        let data = [CastAndCrew(adult: false, gender: 2, id: 182, name: "Steve Carell", originalName: "Steve Carell", popularity: 18.255, profilePath: "/5XBzD5WuTyVQZeS4VI25z2moMeY.jpg", character: "Michael Scott", job: "")]
+        
+        mock.model = data
+        
+        // MARK: - Then
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        viewModel.castAndCrewSubject.sink(receiveCompletion: { _ in
+            XCTFail("Error test_success CastAndCrewViewModelTestCase")
+        }, receiveValue: { result in
+            XCTAssertEqual(result.count, 1)
+        }).store(in: &cancellables)
+        
+        // MARK: - When
+
+        viewModel.getCastAndCrewBy(movieId: 281)
+        XCTAssertEqual(mock.getCastAndCrewByCallCount, 1)
     }
-
 }

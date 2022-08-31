@@ -11,6 +11,8 @@
 		290CB9D428BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */; };
 		292BA64328901DCE00C5ABC4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */; };
 		293C473A28BFE05D00E73FA7 /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C473928BFE05D00E73FA7 /* App+Injection.swift */; };
+		293C473C28BFE2AF00E73FA7 /* CastAndCrewRepositoryProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C473B28BFE2AF00E73FA7 /* CastAndCrewRepositoryProtocolMock.swift */; };
+		293C473E28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C473D28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift */; };
 		294CB197288ED4BD008DD76B /* CastAndCrewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */; };
 		294CB199288EDF0E008DD76B /* CastAndCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */; };
 		294CB19B288F1FA2008DD76B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CB19A288F1FA2008DD76B /* HomeViewController.swift */; };
@@ -72,6 +74,8 @@
 		290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryProtocolMock.swift; sourceTree = "<group>"; };
 		292BA64228901DCE00C5ABC4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		293C473928BFE05D00E73FA7 /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
+		293C473B28BFE2AF00E73FA7 /* CastAndCrewRepositoryProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewRepositoryProtocolMock.swift; sourceTree = "<group>"; };
+		293C473D28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewViewModelTestCase.swift; sourceTree = "<group>"; };
 		294CB196288ED4BD008DD76B /* CastAndCrewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewController.swift; sourceTree = "<group>"; };
 		294CB198288EDF0E008DD76B /* CastAndCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewCell.swift; sourceTree = "<group>"; };
 		294CB19A288F1FA2008DD76B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			children = (
 				293C473728BFE00600E73FA7 /* Mock */,
 				290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */,
+				293C473D28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift */,
 			);
 			path = "CI&T Movie DatabaseTests";
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				290CB9D328BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift */,
+				293C473B28BFE2AF00E73FA7 /* CastAndCrewRepositoryProtocolMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -481,7 +487,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293C473E28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift in Sources */,
 				290CB9D228BFC1A900CB49C8 /* PhotoViewModelTestCase.swift in Sources */,
+				293C473C28BFE2AF00E73FA7 /* CastAndCrewRepositoryProtocolMock.swift in Sources */,
 				290CB9D428BFC69700CB49C8 /* PhotoRepositoryProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
