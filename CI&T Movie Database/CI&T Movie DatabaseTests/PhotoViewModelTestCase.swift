@@ -11,12 +11,12 @@ import XCTest
 
 class PhotoViewModelTestCase: XCTestCase {
     var viewModel: PhotoViewModel!
-    var mockPhotoRepository = PhotoRepositoryProtocolMock()
+    var mock = PhotoRepositoryProtocolMock()
     var cancellables: Set<AnyCancellable>!
 
     override func setUp() async throws {
         cancellables = []
-        viewModel = PhotoViewModel(photoRepository: mockPhotoRepository)
+        viewModel = PhotoViewModel(photoRepository: mock)
     }
 
     override func tearDown() async throws {
@@ -26,7 +26,7 @@ class PhotoViewModelTestCase: XCTestCase {
     func test_error() {
         // MARK: - Given
 
-        mockPhotoRepository.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
+        mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
 
         // MARK: - Then
 
@@ -39,14 +39,14 @@ class PhotoViewModelTestCase: XCTestCase {
         // MARK: - When
 
         viewModel.getPhotosBy(movieId: 819)
-        XCTAssertEqual(mockPhotoRepository.getPhotosByCallCount, 1)
+        XCTAssertEqual(mock.getPhotosByCallCount, 1)
     }
 
     func test_success() {
         // MARK: - Given
 
         let data = [MovieImages(filePath: "/w2rWEjAMYErpNfoK2Z0GFh1LFhN.jpg")]
-        mockPhotoRepository.data = data
+        mock.data = data
 
         // MARK: - Then
 
@@ -59,6 +59,6 @@ class PhotoViewModelTestCase: XCTestCase {
         // MARK: - When
 
         viewModel.getPhotosBy(movieId: 819)
-        XCTAssertEqual(mockPhotoRepository.getPhotosByCallCount, 1)
+        XCTAssertEqual(mock.getPhotosByCallCount, 1)
     }
 }

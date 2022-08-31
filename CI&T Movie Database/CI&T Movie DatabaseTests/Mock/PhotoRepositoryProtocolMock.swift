@@ -7,7 +7,7 @@ import Foundation
 
 class PhotoRepositoryProtocolMock: PhotoRepositoryProtocol {
     var data: [MovieImages] = []
-    var error: Error!
+    var error: Error! = nil
 
     private(set) var getPhotosByCallCount = 0
     var getPhotosByHandler: ((Int, @escaping (Result<[MovieImages], Error>) -> Void) -> Void)?
