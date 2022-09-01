@@ -168,11 +168,8 @@
 		290CB9C928BFBF5600CB49C8 /* CI&T Movie DatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				294CA54028C132A600457AA8 /* ViewModelTestCase */,
 				293C473728BFE00600E73FA7 /* Mock */,
-				290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */,
-				293C474328BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift */,
-				293C474728BFED9900E73FA7 /* MovieListViewModelTestCase.swift */,
-				293C473D28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift */,
 			);
 			path = "CI&T Movie DatabaseTests";
 			sourceTree = "<group>";
@@ -196,6 +193,17 @@
 				293C473928BFE05D00E73FA7 /* App+Injection.swift */,
 			);
 			path = Injection;
+			sourceTree = "<group>";
+		};
+		294CA54028C132A600457AA8 /* ViewModelTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				290CB9D128BFC1A900CB49C8 /* PhotoViewModelTestCase.swift */,
+				293C474328BFE96700E73FA7 /* MovieDetailViewModelTestCase.swift */,
+				293C474728BFED9900E73FA7 /* MovieListViewModelTestCase.swift */,
+				293C473D28BFE3A200E73FA7 /* CastAndCrewViewModelTestCase.swift */,
+			);
+			path = ViewModelTestCase;
 			sourceTree = "<group>";
 		};
 		29590D642888E87600E351F4 /* Fonts */ = {
