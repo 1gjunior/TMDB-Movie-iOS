@@ -7,12 +7,20 @@ import Combine
 import Foundation
 
 class APIManagerServiceMock: APIManagerService {
+    var item: Any?
+    var error: Error?
+
     private(set) var fetchItemsCallCount = 0
     var fetchItemsHandler: ((URL, Any) -> Void)?
     func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {
         fetchItemsCallCount += 1
         if let fetchItemsHandler = fetchItemsHandler {
             fetchItemsHandler(url, completion)
+        }
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            completion(.success(item as! T))
         }
     }
 }
