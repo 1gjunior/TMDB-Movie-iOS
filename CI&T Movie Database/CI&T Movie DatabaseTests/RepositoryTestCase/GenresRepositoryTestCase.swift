@@ -5,11 +5,11 @@
 //  Created by Gilberto Junior on 01/09/22.
 //
 
-import XCTest
 @testable import CI_T_Movie_Database
+import Combine
+import XCTest
 
 class GenresRepositoryTestCase: XCTestCase {
-
     let mock = APIManagerServiceMock()
     var repository: GenresRepository!
     var url: URL?
@@ -18,7 +18,7 @@ class GenresRepositoryTestCase: XCTestCase {
         repository = GenresRepository(apiManager: mock)
     }
  
-    func testApiManagerError() {
+    func test_error() {
         mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
         
         repository.getGenres(completion: { result in
@@ -29,9 +29,10 @@ class GenresRepositoryTestCase: XCTestCase {
                 XCTAssertNotNil(self.mock.error)
             }
         })
+        XCTAssertEqual(mock.fetchItemsCallCount, 1)
     }
     
-    func testApiManager() {
+    func test_success() {
         let genres = [MovieGenre(id: 182, name: "The Office")]
         
         mock.item = MoviesGenreResponse(genres: genres)
@@ -44,6 +45,6 @@ class GenresRepositoryTestCase: XCTestCase {
                 XCTFail()
             }
         })
+        XCTAssertEqual(mock.fetchItemsCallCount, 1)
     }
-
 }

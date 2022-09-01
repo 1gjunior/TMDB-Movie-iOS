@@ -18,7 +18,7 @@ class CastAndCrewRepositoryTestCase: XCTestCase {
         repository = CastAndCrewRepository(apiManager: mock)
     }
  
-    func testApiManagerError() {
+    func test_error() {
         mock.error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Error"])
         
         repository.getCastAndCrewBy(movieId: 500, completion: { result in
@@ -29,9 +29,10 @@ class CastAndCrewRepositoryTestCase: XCTestCase {
                 XCTAssertNotNil(self.mock.error)
             }
         })
+        XCTAssertEqual(mock.fetchItemsCallCount, 1)
     }
     
-    func testApiManager() {
+    func test_success() {
         let castAndCrew = [CastAndCrew(adult: false, gender: 2, id: 182, name: "Steve Carell", originalName: "Steve Carell", popularity: 18.255, profilePath: "/5XBzD5WuTyVQZeS4VI25z2moMeY.jpg", character: "Michael Scott", job: "")]
         
         mock.item = MovieCastAndCrewResponse(id: 500, cast: castAndCrew, crew: castAndCrew)
@@ -44,5 +45,6 @@ class CastAndCrewRepositoryTestCase: XCTestCase {
                 XCTFail()
             }
         })
+        XCTAssertEqual(mock.fetchItemsCallCount, 1)
     }
 }
