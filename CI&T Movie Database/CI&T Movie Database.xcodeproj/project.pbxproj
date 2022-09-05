@@ -55,6 +55,8 @@
 		299BBA37287DCFE100ADE88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299BBA35287DCFE100ADE88D /* LaunchScreen.storyboard */; };
 		299BBA42287DD18B00ADE88D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299BBA41287DD18B00ADE88D /* Movie.swift */; };
 		29A1F16B289B224100AB469F /* PhotoDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F16A289B224100AB469F /* PhotoDetailCollectionViewCell.swift */; };
+		29AF3AB628C66F1D00AE870B /* CIT_Movie_DatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AF3AB528C66F1D00AE870B /* CIT_Movie_DatabaseUITests.swift */; };
+		29AF3AB828C66F1D00AE870B /* CIT_Movie_DatabaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AF3AB728C66F1D00AE870B /* CIT_Movie_DatabaseUITestsLaunchTests.swift */; };
 		29B8F9E328A32287001A8199 /* APIManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8F9E228A32287001A8199 /* APIManagerService.swift */; };
 		29B8F9E528A32532001A8199 /* CastAndCrewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8F9E428A32532001A8199 /* CastAndCrewViewModel.swift */; };
 		29F7698B28A414C000D6D348 /* CastAndCrewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7698A28A414C000D6D348 /* CastAndCrewRepository.swift */; };
@@ -71,6 +73,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		290CB9CC28BFBF5600CB49C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 299BBA1F287DCFDF00ADE88D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 299BBA26287DCFDF00ADE88D;
+			remoteInfo = "CI&T Movie Database";
+		};
+		29AF3AB928C66F1D00AE870B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 299BBA1F287DCFDF00ADE88D /* Project object */;
 			proxyType = 1;
@@ -131,6 +140,9 @@
 		299BBA38287DCFE100ADE88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299BBA41287DD18B00ADE88D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29A1F16A289B224100AB469F /* PhotoDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		29AF3AB328C66F1D00AE870B /* CIT Movie DatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIT Movie DatabaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29AF3AB528C66F1D00AE870B /* CIT_Movie_DatabaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIT_Movie_DatabaseUITests.swift; sourceTree = "<group>"; };
+		29AF3AB728C66F1D00AE870B /* CIT_Movie_DatabaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIT_Movie_DatabaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29B8F9E228A32287001A8199 /* APIManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerService.swift; sourceTree = "<group>"; };
 		29B8F9E428A32532001A8199 /* CastAndCrewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewViewModel.swift; sourceTree = "<group>"; };
 		29F7698A28A414C000D6D348 /* CastAndCrewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewRepository.swift; sourceTree = "<group>"; };
@@ -160,6 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FCD81763BAF519AEA34FB74 /* Pods_CI_T_Movie_Database.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29AF3AB028C66F1D00AE870B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +286,7 @@
 			children = (
 				299BBA29287DCFDF00ADE88D /* CI&T Movie Database */,
 				290CB9C928BFBF5600CB49C8 /* CI&T Movie DatabaseTests */,
+				29AF3AB428C66F1D00AE870B /* CIT Movie DatabaseUITests */,
 				6C9DC7EA590D849BE1BA178F /* Frameworks */,
 				120671BB37D48501582B84A3 /* Pods */,
 				299BBA28287DCFDF00ADE88D /* Products */,
@@ -278,6 +298,7 @@
 			children = (
 				299BBA27287DCFDF00ADE88D /* CI&T Movie Database.app */,
 				290CB9C828BFBF5600CB49C8 /* CI&T Movie DatabaseTests.xctest */,
+				29AF3AB328C66F1D00AE870B /* CIT Movie DatabaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -309,6 +330,15 @@
 				299BBA41287DD18B00ADE88D /* Movie.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		29AF3AB428C66F1D00AE870B /* CIT Movie DatabaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				29AF3AB528C66F1D00AE870B /* CIT_Movie_DatabaseUITests.swift */,
+				29AF3AB728C66F1D00AE870B /* CIT_Movie_DatabaseUITestsLaunchTests.swift */,
+			);
+			path = "CIT Movie DatabaseUITests";
 			sourceTree = "<group>";
 		};
 		29B8F9E128A32268001A8199 /* Services */ = {
@@ -413,6 +443,24 @@
 			productReference = 299BBA27287DCFDF00ADE88D /* CI&T Movie Database.app */;
 			productType = "com.apple.product-type.application";
 		};
+		29AF3AB228C66F1D00AE870B /* CIT Movie DatabaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29AF3ABD28C66F1D00AE870B /* Build configuration list for PBXNativeTarget "CIT Movie DatabaseUITests" */;
+			buildPhases = (
+				29AF3AAF28C66F1D00AE870B /* Sources */,
+				29AF3AB028C66F1D00AE870B /* Frameworks */,
+				29AF3AB128C66F1D00AE870B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29AF3ABA28C66F1D00AE870B /* PBXTargetDependency */,
+			);
+			name = "CIT Movie DatabaseUITests";
+			productName = "CIT Movie DatabaseUITests";
+			productReference = 29AF3AB328C66F1D00AE870B /* CIT Movie DatabaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -429,6 +477,10 @@
 					};
 					299BBA26287DCFDF00ADE88D = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					29AF3AB228C66F1D00AE870B = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 299BBA26287DCFDF00ADE88D;
 					};
 				};
 			};
@@ -447,6 +499,7 @@
 			targets = (
 				299BBA26287DCFDF00ADE88D /* CI&T Movie Database */,
 				290CB9C728BFBF5600CB49C8 /* CI&T Movie DatabaseTests */,
+				29AF3AB228C66F1D00AE870B /* CIT Movie DatabaseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -484,6 +537,13 @@
 				29590DF92888FFAC00E351F4 /* Poppins-Italic.ttf in Resources */,
 				29590DFA2888FFAC00E351F4 /* Poppins-MediumItalic.ttf in Resources */,
 				299BBA32287DCFDF00ADE88D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29AF3AB128C66F1D00AE870B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +644,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29AF3AAF28C66F1D00AE870B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29AF3AB628C66F1D00AE870B /* CIT_Movie_DatabaseUITests.swift in Sources */,
+				29AF3AB828C66F1D00AE870B /* CIT_Movie_DatabaseUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -591,6 +660,11 @@
 			isa = PBXTargetDependency;
 			target = 299BBA26287DCFDF00ADE88D /* CI&T Movie Database */;
 			targetProxy = 290CB9CC28BFBF5600CB49C8 /* PBXContainerItemProxy */;
+		};
+		29AF3ABA28C66F1D00AE870B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 299BBA26287DCFDF00ADE88D /* CI&T Movie Database */;
+			targetProxy = 29AF3AB928C66F1D00AE870B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -818,6 +892,38 @@
 			};
 			name = Release;
 		};
+		29AF3ABB28C66F1D00AE870B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ciandt.CIT-Movie-DatabaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CI&T Movie Database";
+			};
+			name = Debug;
+		};
+		29AF3ABC28C66F1D00AE870B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ciandt.CIT-Movie-DatabaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CI&T Movie Database";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -844,6 +950,15 @@
 			buildConfigurations = (
 				299BBA3C287DCFE100ADE88D /* Debug */,
 				299BBA3D287DCFE100ADE88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29AF3ABD28C66F1D00AE870B /* Build configuration list for PBXNativeTarget "CIT Movie DatabaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29AF3ABB28C66F1D00AE870B /* Debug */,
+				29AF3ABC28C66F1D00AE870B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

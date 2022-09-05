@@ -39,6 +39,16 @@
                ReferencedContainer = "container:CI&amp;T Movie Database.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29AF3AB228C66F1D00AE870B"
+               BuildableName = "CIT Movie DatabaseUITests.xctest"
+               BlueprintName = "CIT Movie DatabaseUITests"
+               ReferencedContainer = "container:CI&amp;T Movie Database.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
