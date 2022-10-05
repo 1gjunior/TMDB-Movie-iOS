@@ -9,7 +9,7 @@ import Foundation
 
 class TMDBAPIService {
     private static let apiBaseURL = "https://api.themoviedb.org/3/"
-    private static let apiKey = "a5a29cab08554d8a0b331b250a19170b"
+    private static let apiKey = "Insert you api key here"
 
     static func getCastAndCrewURLString(id: Int) -> URL? {
         let urlComponents = URLComponents(string: apiBaseURL + "movie/\(id)/credits?api_key=" + apiKey)
